@@ -17,7 +17,7 @@ public class CustomerBusinessRules {
     MessageService messageService;
 
     public void customerNameCannotBeDuplicated(String customerName) {
-        Optional<Customer> customer = customerRepository.findByNameIgnoreCase(customerName);
+        Optional<Customer> customer = customerRepository.findByNameIgnoreCase(customerName); //todo: isme göre değil, kimlik no'ya göre olsun
         if (customer.isPresent()) {
             throw new BusinessException(messageService.getMessage(Messages.CustomerErrors.CUSTOMER_NAME_EXISTS));
         }
