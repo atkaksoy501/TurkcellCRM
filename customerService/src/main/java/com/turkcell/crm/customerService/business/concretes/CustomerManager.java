@@ -9,7 +9,7 @@ import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetAllC
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetCustomerResponseById;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.UpdatedCustomerResponse;
 import com.turkcell.crm.customerService.business.rules.CustomerBusinessRules;
-import com.turkcell.crm.customerService.concretes.Customer;
+import com.turkcell.crm.customerService.entities.concretes.Customer;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.turkcell.crm.customerService.concretes;
+package com.turkcell.crm.customerService.entities.concretes;
 
 
 import com.turkcell.crm.customerService.core.entities.BaseEntity;

@@ -1,7 +1,7 @@
 package com.turkcell.crm.customerService.abstracts;
 
 
-import com.turkcell.crm.customerService.concretes.Customer;
+import com.turkcell.crm.customerService.entities.concretes.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
