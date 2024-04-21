@@ -9,5 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class GetCustomerResponse { //getAll ve getById dışında kullanılan alanlar için
     private int id;
-    private String name;
+    private String firstName;
+    private String middleName;
+    private String lastName;
 }

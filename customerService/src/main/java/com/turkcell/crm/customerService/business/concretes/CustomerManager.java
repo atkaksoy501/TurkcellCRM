@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.business.concretes;
 
-import com.turkcell.crm.customerService.abstracts.CustomerRepository;
+import com.turkcell.crm.customerService.dataAccess.abstracts.CustomerRepository;
 import com.turkcell.crm.customerService.business.abstracts.CustomerService;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateCustomerRequest;
@@ -28,9 +28,9 @@ public class CustomerManager implements CustomerService {
 
     @Override
     public CreatedCustomerResponse add(CreateCustomerRequest createCustomerRequest) {
-        customerBusinessRules.customerNameCannotBeDuplicated(createCustomerRequest.getName());
+        customerBusinessRules.customerNameCannotBeDuplicated(createCustomerRequest.getFirstName()); //todo: isme göre değil, kimlik no'ya göre olsun
         Customer customer = this.modelMapperService.forRequest().map(createCustomerRequest, Customer.class);
-        customer.setCreateDate(LocalDateTime.now());
+        customer.setCreatedDate(LocalDateTime.now());
 
         Customer savedCustomer = customerRepository.save(customer);
 
@@ -62,10 +62,10 @@ public class CustomerManager implements CustomerService {
     public UpdatedCustomerResponse update(UpdateCustomerRequest updateCustomerRequest) {
         customerBusinessRules.customerMustExists(updateCustomerRequest.getId());
         Customer customer = this.modelMapperService.forRequest().map(updateCustomerRequest, Customer.class);
-        customer.setUpdateDate(LocalDateTime.now());
+        customer.setUpdatedDate(LocalDateTime.now());
         Customer updatedCustomer = customerRepository.save(customer);
         UpdatedCustomerResponse updatedCustomerResponse = this.modelMapperService.forResponse().map(updatedCustomer, UpdatedCustomerResponse.class);
-        updatedCustomerResponse.setUpdateDate(updatedCustomer.getUpdateDate());
+        updatedCustomerResponse.setUpdatedDate(updatedCustomer.getUpdatedDate());
         return updatedCustomerResponse;
     }
 

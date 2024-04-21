@@ -1,4 +1,4 @@
-package com.turkcell.crm.customerService.controllers;
+package com.turkcell.crm.customerService.api.controllers;
 
 import com.turkcell.crm.customerService.business.abstracts.CustomerService;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateCustomerRequest;
@@ -21,31 +21,31 @@ public class CustomersController {
 
     private CustomerService customerService;
 
-    @PostMapping
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public CreatedCustomerResponse add(@Valid @RequestBody CreateCustomerRequest customer) {
         return customerService.add(customer);
     }
 
-    @GetMapping
+    @GetMapping("/getall")
     @ResponseStatus(HttpStatus.OK)
     public List<GetAllCustomerResponse> getAll() {
         return customerService.getAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getById/{id}")
     @ResponseStatus(HttpStatus.OK)
     public GetCustomerResponseById getById(@PathVariable int id) {
         return customerService.getById(id);
     }
 
-    @PutMapping
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
     public UpdatedCustomerResponse update(@Valid @RequestBody UpdateCustomerRequest updateCustomerRequest) {
         return customerService.update(updateCustomerRequest);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable int id) {
         customerService.delete(id);

@@ -23,11 +23,14 @@ public class BaseEntity<T extends Serializable> {
     private T id;
 
     @Column(name = "createDate")
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
 
     @Column(name = "updateDate")
-    private LocalDateTime updateDate;
+    private LocalDateTime updatedDate;
 
     @Column(name = "deleteDate")
-    private LocalDateTime deleteDate;
+    private LocalDateTime deletedDate;
+
+    @Column(name = "active")
+    private Boolean active;
 }
