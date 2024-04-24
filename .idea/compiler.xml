@@ -18,12 +18,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="configServer" options="-parameters" />
+      <module name="configServer" options="" />
       <module name="customerService" options="-parameters" />
       <module name="discoveryServer" options="-parameters" />
-      <module name="gatewayService" options="-parameters" />
+      <module name="gatewayService" options="" />
       <module name="identityService" options="-parameters" />
-      <module name="searchService" options="-parameters" />
+      <module name="searchService" options="" />
     </option>
   </component>
 </project>
