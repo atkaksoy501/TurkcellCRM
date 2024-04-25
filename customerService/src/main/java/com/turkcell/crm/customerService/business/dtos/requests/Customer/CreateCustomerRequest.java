@@ -22,6 +22,9 @@ public class CreateCustomerRequest {
     @Size(min = 2, max = 30)
     private String firstName;
 
+    @NotNull
+    private String email;
+
     @Size(min = 2, max = 30)
     private String middleName;
 
@@ -32,7 +35,7 @@ public class CreateCustomerRequest {
     @NotNull
     private LocalDate birthDate;
 
-    @NotNull
+
     private Gender gender;
 
     @NotNull
@@ -47,13 +50,13 @@ public class CreateCustomerRequest {
     @Size(min = 2, max = 30)
     private String motherMaidenName;
 
-    @NotNull
+
     @Size(min = 11, max = 11)
     private String nationalId;
 
-    @NotNull
+
     private List<Address> addresses;
 
-    @NotNull
+
     private Contact contactInfo;
 }
