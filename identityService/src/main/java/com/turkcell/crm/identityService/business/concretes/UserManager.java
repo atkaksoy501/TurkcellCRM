@@ -1,7 +1,6 @@
 package com.turkcell.crm.identityService.business.concretes;
 
 import com.turkcell.crm.identityService.business.abstracts.UserService;
-import com.turkcell.crm.identityService.business.dtos.requests.CustomerCreatedEvent;
 import com.turkcell.crm.identityService.business.dtos.requests.RegisterRequest;
 import com.turkcell.crm.identityService.business.messages.AuthMessages;
 import com.turkcell.crm.identityService.core.utilities.exceptions.types.BusinessException;
@@ -9,12 +8,12 @@ import com.turkcell.crm.identityService.core.utilities.mapping.ModelMapperServic
 import com.turkcell.crm.identityService.dataAccess.abstracts.UserRepository;
 import com.turkcell.crm.identityService.entities.concretes.User;
 import lombok.AllArgsConstructor;
-import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.turkcell.crm.common.events.identity.CreateCustomerRequest;
 
 @Service
 @AllArgsConstructor
@@ -24,11 +23,11 @@ public class UserManager implements UserService {
     private final PasswordEncoder passwordEncoder;
 
 
-    @KafkaListener(topics = "customertopic",groupId = "1")
-    public void consume(CustomerCreatedEvent customerCreatedEvent){
+    @KafkaListener(topics = {"customertopic"}, groupId = "1")
+    public void consume(CreateCustomerRequest createCustomerRequest){
 
         RegisterRequest registerRequest =
-                this.modelMapperService.forRequest().map(customerCreatedEvent,RegisterRequest.class);
+                this.modelMapperService.forRequest().map(createCustomerRequest,RegisterRequest.class);
         registerRequest.setPassword("1");
         register(registerRequest);
     }

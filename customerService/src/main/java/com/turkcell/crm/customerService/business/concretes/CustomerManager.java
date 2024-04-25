@@ -2,7 +2,6 @@ package com.turkcell.crm.customerService.business.concretes;
 
 import com.turkcell.crm.customerService.dataAccess.abstracts.CustomerRepository;
 import com.turkcell.crm.customerService.business.abstracts.CustomerService;
-import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.CreatedCustomerResponse;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetAllCustomerResponse;
@@ -18,6 +17,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
+import com.turkcell.crm.common.events.identity.CreateCustomerRequest;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -46,6 +46,7 @@ public class CustomerManager implements CustomerService {
         Message<CreateCustomerRequest> message = MessageBuilder.withPayload(createCustomerRequest)
                 .setHeader(KafkaHeaders.TOPIC,"customertopic")
                 .build();
+
         kafkaTemplate.send(message);
         return createdCustomerResponse;
     }

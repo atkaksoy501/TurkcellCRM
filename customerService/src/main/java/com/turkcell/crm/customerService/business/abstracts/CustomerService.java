@@ -1,7 +1,7 @@
 package com.turkcell.crm.customerService.business.abstracts;
 
 
-import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateCustomerRequest;
+import com.turkcell.crm.common.events.identity.CreateCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.CreatedCustomerResponse;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetAllCustomerResponse;
