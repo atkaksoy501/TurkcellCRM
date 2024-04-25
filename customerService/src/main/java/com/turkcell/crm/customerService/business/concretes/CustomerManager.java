@@ -12,6 +12,11 @@ import com.turkcell.crm.customerService.business.rules.CustomerBusinessRules;
 import com.turkcell.crm.customerService.entities.concretes.Customer;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,11 +25,13 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
+@Slf4j
 public class CustomerManager implements CustomerService {
 
     private CustomerRepository customerRepository;
     private ModelMapperService modelMapperService;
     private CustomerBusinessRules customerBusinessRules;
+    private KafkaTemplate<String,Object> kafkaTemplate;
 
     @Override
     public CreatedCustomerResponse add(CreateCustomerRequest createCustomerRequest) {
@@ -36,7 +43,10 @@ public class CustomerManager implements CustomerService {
 
         CreatedCustomerResponse createdCustomerResponse =
                 this.modelMapperService.forResponse().map(savedCustomer, CreatedCustomerResponse.class);
-
+        Message<CreateCustomerRequest> message = MessageBuilder.withPayload(createCustomerRequest)
+                .setHeader(KafkaHeaders.TOPIC,"customertopic")
+                .build();
+        kafkaTemplate.send(message);
         return createdCustomerResponse;
     }
 

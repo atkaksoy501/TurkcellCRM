@@ -21,7 +21,7 @@
       <module name="configServer" options="" />
       <module name="customerService" options="-parameters" />
       <module name="discoveryServer" options="-parameters" />
-      <module name="gatewayService" options="" />
+      <module name="gatewayService" options="-parameters" />
       <module name="identityService" options="-parameters" />
       <module name="searchService" options="" />
     </option>
