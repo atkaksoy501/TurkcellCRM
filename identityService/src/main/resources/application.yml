@@ -27,6 +27,18 @@ spring:
           validation:
             mode: none
     show-sql: true
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
 
 jwt:
   secret:
@@ -34,6 +46,5 @@ jwt:
 
   expiration:
     time: 600000
-
 
 

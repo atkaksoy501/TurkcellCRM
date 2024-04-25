@@ -20,6 +20,9 @@ public class Customer extends BaseEntity<Integer> {
     @Column(name = "first_name")
     private String firstName;
 
+    @Column(name="email")
+    private String email;
+
     @Column(name = "middle_name")
     private String middleName;
 

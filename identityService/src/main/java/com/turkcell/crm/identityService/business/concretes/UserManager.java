@@ -8,10 +8,12 @@ import com.turkcell.crm.identityService.core.utilities.mapping.ModelMapperServic
 import com.turkcell.crm.identityService.dataAccess.abstracts.UserRepository;
 import com.turkcell.crm.identityService.entities.concretes.User;
 import lombok.AllArgsConstructor;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.turkcell.crm.common.events.identity.CreateCustomerRequest;
 
 @Service
 @AllArgsConstructor
@@ -19,6 +21,17 @@ public class UserManager implements UserService {
     private final UserRepository userRepository;
     private final ModelMapperService modelMapperService;
     private final PasswordEncoder passwordEncoder;
+
+
+    @KafkaListener(topics = {"customertopic"}, groupId = "1")
+    public void consume(CreateCustomerRequest createCustomerRequest){
+
+        RegisterRequest registerRequest =
+                this.modelMapperService.forRequest().map(createCustomerRequest,RegisterRequest.class);
+        registerRequest.setPassword("1");
+        register(registerRequest);
+    }
+
 
 
     @Override
