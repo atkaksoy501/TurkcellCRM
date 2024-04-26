@@ -6,7 +6,6 @@ import com.turkcell.crm.customerService.business.dtos.responses.Contact.CreatedC
 import com.turkcell.crm.customerService.business.dtos.responses.Contact.GetAllContactResponse;
 import com.turkcell.crm.customerService.business.dtos.responses.Contact.GetContactResponseById;
 import com.turkcell.crm.customerService.business.dtos.responses.Contact.UpdatedContactResponse;
-import com.turkcell.crm.customerService.entities.concretes.Contact;
 
 import java.util.List;
 

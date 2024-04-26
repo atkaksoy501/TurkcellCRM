@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "accounts")
 public class Account extends BaseEntity<Integer> {
-    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private AccountStatus status;
 
@@ -24,7 +23,6 @@ public class Account extends BaseEntity<Integer> {
     @Column(name = "account_name")
     private String accountName;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "account_type")
     private AccountType accountType;
 

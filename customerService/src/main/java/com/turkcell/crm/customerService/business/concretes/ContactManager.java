@@ -9,7 +9,6 @@ import com.turkcell.crm.customerService.business.dtos.responses.Contact.GetConta
 import com.turkcell.crm.customerService.business.dtos.responses.Contact.UpdatedContactResponse;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.customerService.dataAccess.abstracts.ContactRepository;
-import com.turkcell.crm.customerService.entities.concretes.Contact;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
