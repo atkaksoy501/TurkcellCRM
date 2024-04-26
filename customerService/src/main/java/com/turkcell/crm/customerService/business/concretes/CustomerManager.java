@@ -1,8 +1,8 @@
 package com.turkcell.crm.customerService.business.concretes;
 
+import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateIndividualCustomerRequest;
 import com.turkcell.crm.customerService.dataAccess.abstracts.CustomerRepository;
 import com.turkcell.crm.customerService.business.abstracts.CustomerService;
-import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.CreatedCustomerResponse;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetAllCustomerResponse;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetCustomerResponseById;
@@ -70,15 +70,17 @@ public class CustomerManager implements CustomerService {
     }
 
     @Override
-    public UpdatedCustomerResponse update(UpdateCustomerRequest updateCustomerRequest) {
-        customerBusinessRules.customerMustExists(updateCustomerRequest.getId());
-        Customer customer = this.modelMapperService.forRequest().map(updateCustomerRequest, Customer.class);
+    public UpdatedCustomerResponse updateIndividual(UpdateIndividualCustomerRequest updateIndividualCustomerRequest) {
+        customerBusinessRules.customerMustExists(updateIndividualCustomerRequest.getId());
+        Customer customer = this.modelMapperService.forRequest().map(updateIndividualCustomerRequest, Customer.class);
         customer.setUpdatedDate(LocalDateTime.now());
         Customer updatedCustomer = customerRepository.save(customer);
         UpdatedCustomerResponse updatedCustomerResponse = this.modelMapperService.forResponse().map(updatedCustomer, UpdatedCustomerResponse.class);
         updatedCustomerResponse.setUpdatedDate(updatedCustomer.getUpdatedDate());
         return updatedCustomerResponse;
     }
+
+    //todo: business customer ve individual customer için ayrı işlemler
 
     @Override
     public void delete(int id) {

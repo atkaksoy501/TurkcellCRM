@@ -3,6 +3,7 @@ package com.turkcell.crm.customerService.business.dtos.requests.Customer;
 import com.turkcell.crm.customerService.core.enums.Gender;
 import com.turkcell.crm.customerService.entities.concretes.Account;
 import com.turkcell.crm.customerService.entities.concretes.Address;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UpdateCustomerRequest {
+public class UpdateIndividualCustomerRequest {
     @NotNull
     private int id;
 
@@ -48,5 +49,9 @@ public class UpdateCustomerRequest {
 
     private List<Account> accounts;
 
-    private Contact contactInfo;
+    @Size(min = 11, max = 11)
+    private String mobilePhoneNumber;
+
+    @Size(min = 11, max = 11)
+    private String homePhoneNumber;
 }
