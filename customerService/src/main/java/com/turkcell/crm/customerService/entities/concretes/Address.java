@@ -22,18 +22,20 @@ public class Address extends BaseEntity<Integer> {
     @Column(name = "street")
     private String street;
 
-    @Column(name = "address_detail")
-    private String addressDetail;
+    @Column(name = "detail")
+    private String detail;
 
     @Column(name = "postal_code")
     private String postalCode;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "address_type")
-    private AddressType addressType;
+    @Column(name = "type")
+    private AddressType type;
 
-    @Column(name = "address_title")
-    private String addressTitle;
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "door_number")
+    private int doorNumber;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

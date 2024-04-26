@@ -3,8 +3,6 @@ package com.turkcell.crm.customerService.business.dtos.requests.Customer;
 import com.turkcell.crm.customerService.core.enums.Gender;
 import com.turkcell.crm.customerService.entities.concretes.Account;
 import com.turkcell.crm.customerService.entities.concretes.Address;
-import com.turkcell.crm.customerService.entities.concretes.Contact;
-import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

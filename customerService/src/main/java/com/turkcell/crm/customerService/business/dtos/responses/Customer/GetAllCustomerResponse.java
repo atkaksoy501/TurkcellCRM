@@ -3,7 +3,6 @@ package com.turkcell.crm.customerService.business.dtos.responses.Customer;
 import com.turkcell.crm.customerService.core.enums.Gender;
 import com.turkcell.crm.customerService.entities.concretes.Account;
 import com.turkcell.crm.customerService.entities.concretes.Address;
-import com.turkcell.crm.customerService.entities.concretes.Contact;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
