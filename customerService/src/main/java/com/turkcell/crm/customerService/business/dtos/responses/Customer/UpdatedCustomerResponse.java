@@ -39,7 +39,7 @@ public class UpdatedCustomerResponse {
 
     private List<Account> accounts;
 
-    private Contact contactInfo;
+//    private Contact contactInfo;
 
     private LocalDateTime updatedDate;
 }

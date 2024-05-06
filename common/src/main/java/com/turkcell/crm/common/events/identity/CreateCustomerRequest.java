@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -21,7 +22,7 @@ public class CreateCustomerRequest {
 
     private LocalDate birthDate;
 
-    private int gender; //todo: enum tablosu olacak
+//    private int gender; //todo: enum tablosu olacak
 
     private String fatherName;
 
@@ -31,7 +32,25 @@ public class CreateCustomerRequest {
 
     private String nationalId;
 
-    private List<Integer> address_ids; //todo: address tablosu ile bağlantısı sağlanacak manager tarafında
+//    private List<Integer> address_ids; //todo: address tablosu ile bağlantısı sağlanacak manager tarafında
+//
+//    private int contact_id; //todo: contact tablosu ile bağlantısı sağlanacak manager tarafında
 
-    private int contact_id; //todo: contact tablosu ile bağlantısı sağlanacak manager tarafında
+    private int id;
+
+    private LocalDateTime createdDate;
+
+    private LocalDateTime updatedDate;
+
+    private LocalDateTime deletedDate;
+
+    private Boolean active;
+
+
+//    @Field(name = "gender")
+//    private char gender;
+
+    private String mobilePhoneNumber;
+
+    private String homePhoneNumber;
 }

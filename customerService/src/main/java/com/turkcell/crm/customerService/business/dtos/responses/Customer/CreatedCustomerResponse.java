@@ -36,7 +36,7 @@ public class CreatedCustomerResponse {
 
     private List<Address> addresses;
 
-    private Contact contactInfo;
+//    private Contact contactInfo;
 
     private LocalDateTime createdDate;
 }

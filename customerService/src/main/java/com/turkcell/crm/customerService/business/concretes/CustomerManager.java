@@ -10,6 +10,8 @@ import com.turkcell.crm.customerService.business.dtos.responses.Customer.Updated
 import com.turkcell.crm.customerService.business.rules.CustomerBusinessRules;
 import com.turkcell.crm.customerService.entities.concretes.Customer;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
+import com.turkcell.crm.customerService.entities.concretes.IndividualCustomer;
+import com.turkcell.crm.customerService.kafka.producers.CustomerProducer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -31,24 +33,21 @@ public class CustomerManager implements CustomerService {
     private CustomerRepository customerRepository;
     private ModelMapperService modelMapperService;
     private CustomerBusinessRules customerBusinessRules;
-    private KafkaTemplate<String,Object> kafkaTemplate;
+    private CustomerProducer customerProducer;
 
     @Override
     public CreatedCustomerResponse add(CreateCustomerRequest createCustomerRequest) {
         customerBusinessRules.customerNameCannotBeDuplicated(createCustomerRequest.getFirstName()); //todo: isme göre değil, kimlik no'ya göre olsun
-        Customer customer = this.modelMapperService.forRequest().map(createCustomerRequest, Customer.class);
+        IndividualCustomer customer = this.modelMapperService.forRequest().map(createCustomerRequest, IndividualCustomer.class);
         customer.setCreatedDate(LocalDateTime.now());
 
-        Customer savedCustomer = customerRepository.save(customer);
+        IndividualCustomer savedCustomer = customerRepository.save(customer);
 
-        CreatedCustomerResponse createdCustomerResponse =
-                this.modelMapperService.forResponse().map(savedCustomer, CreatedCustomerResponse.class);
-        Message<CreateCustomerRequest> message = MessageBuilder.withPayload(createCustomerRequest)
-                .setHeader(KafkaHeaders.TOPIC,"customertopic")
-                .build();
+        CreateCustomerRequest createdCustomerRequest =
+                this.modelMapperService.forResponse().map(savedCustomer, CreateCustomerRequest.class);
 
-        kafkaTemplate.send(message);
-        return createdCustomerResponse;
+        customerProducer.sendMessage(createdCustomerRequest);
+        return modelMapperService.forResponse().map(savedCustomer, CreatedCustomerResponse.class);
     }
 
     @Override
