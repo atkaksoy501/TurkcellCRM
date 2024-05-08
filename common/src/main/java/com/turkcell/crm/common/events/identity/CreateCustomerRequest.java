@@ -30,7 +30,7 @@ public class CreateCustomerRequest {
 
     private String motherMaidenName;
 
-    private String nationalId;
+    private String nationalityId;
 
 //    private List<Integer> address_ids; //todo: address tablosu ile bağlantısı sağlanacak manager tarafında
 //

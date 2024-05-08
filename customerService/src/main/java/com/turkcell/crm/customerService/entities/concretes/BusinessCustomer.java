@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "business_customers")
 public class BusinessCustomer extends Customer {
+    @Column(name = "business_customer_id", insertable = false, updatable = false)
+    private Integer businessCustomerId;
+
     @Column(name = "company_name")
     private String companyName;
 

@@ -1,23 +1,20 @@
-package com.turkcell.crm.customerService.business.dtos.responses.Customer;
+package com.turkcell.crm.customerService.business.dtos.requests.Customer;
 
 import com.turkcell.crm.customerService.core.enums.Gender;
-import com.turkcell.crm.customerService.entities.concretes.Account;
-import com.turkcell.crm.customerService.entities.concretes.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UpdatedCustomerResponse {
-    private int id;
-
+public class CreateIndividualCustomerRequest {
     private String firstName;
+
+    private String email;
 
     private String middleName;
 
@@ -25,7 +22,7 @@ public class UpdatedCustomerResponse {
 
     private LocalDate birthDate;
 
-    private Gender gender;
+//    private Gender gender; //todo: enum tablosu olacak
 
     private String fatherName;
 
@@ -35,11 +32,9 @@ public class UpdatedCustomerResponse {
 
     private String nationalityId;
 
-    private List<Address> addresses;
+//    private List<Integer> address_ids; //todo: address tablosu ile bağlantısı sağlanacak manager tarafında
 
-    private List<Account> accounts;
+    private String mobilePhoneNumber;
 
-//    private Contact contactInfo;
-
-    private LocalDateTime updatedDate;
+    private String homePhoneNumber;
 }

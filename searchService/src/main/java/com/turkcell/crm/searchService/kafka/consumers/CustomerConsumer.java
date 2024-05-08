@@ -1,6 +1,6 @@
 package com.turkcell.crm.searchService.kafka.consumers;
 
-import com.turkcell.crm.common.events.identity.CreateCustomerRequest;
+import com.turkcell.crm.common.events.identity.CreateIndividualCustomerEvent;
 import com.turkcell.crm.searchService.business.abstracts.CustomerService;
 import com.turkcell.crm.searchService.entities.concretes.Customer;
 import lombok.AllArgsConstructor;
@@ -15,22 +15,17 @@ import org.springframework.stereotype.Service;
 public class CustomerConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerConsumer.class);
     private CustomerService customerService;
-    @KafkaListener(topics = "customer-created",groupId="customer-create")
-    public void consume(CreateCustomerRequest customerCreatedEvent){//hata var
+    @KafkaListener(topics = "individual-customer-created",groupId="individual-customer-create")
+    public void consume(CreateIndividualCustomerEvent customerCreatedEvent){
         Customer customer = new Customer();
-        customer.setFirstName(customerCreatedEvent.getFirstName());
-        customer.setMiddleName(customerCreatedEvent.getMiddleName());
-        customer.setLastName(customerCreatedEvent.getLastName());
-        customer.setEmail(customerCreatedEvent.getEmail());
-        customer.setBirthDate(customerCreatedEvent.getBirthDate());
-        customer.setFatherName(customerCreatedEvent.getFatherName());
-        customer.setHomePhoneNumber(customerCreatedEvent.getHomePhoneNumber());
-        customer.setMobilePhoneNumber(customerCreatedEvent.getMobilePhoneNumber());
-        customer.setMotherMaidenName(customerCreatedEvent.getMotherMaidenName());
-        customer.setNationalId(customerCreatedEvent.getNationalId());
-        customer.setActive(customerCreatedEvent.getActive());
-        customer.setMotherName(customerCreatedEvent.getMotherName());
         customer.setId(customerCreatedEvent.getId());
+        customer.setEmail(customerCreatedEvent.getEmail());
+        customer.setFirstName(customerCreatedEvent.getFirstName());
+        customer.setLastName(customerCreatedEvent.getLastName());
+        customer.setNationalityId(customerCreatedEvent.getNationalityId());
+        customer.setMobilePhoneNumber(customerCreatedEvent.getMobilePhoneNumber());
+        customer.setAccountNumber(customerCreatedEvent.getAccountNumber());
+        customer.setOrderNumber(customerCreatedEvent.getOrderNumber());
         this.customerService.add(customer);
     }
 }

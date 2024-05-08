@@ -43,7 +43,7 @@ public class UpdateIndividualCustomerRequest {
     private String motherMaidenName;
 
     @Size(min = 11, max = 11)
-    private String nationalId;
+    private String nationalityId;
 
     private List<Address> addresses;
 

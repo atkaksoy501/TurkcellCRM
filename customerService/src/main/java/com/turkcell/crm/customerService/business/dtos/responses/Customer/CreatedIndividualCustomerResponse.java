@@ -1,7 +1,6 @@
 package com.turkcell.crm.customerService.business.dtos.responses.Customer;
 
 import com.turkcell.crm.customerService.core.enums.Gender;
-import com.turkcell.crm.customerService.entities.concretes.Account;
 import com.turkcell.crm.customerService.entities.concretes.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UpdatedCustomerResponse {
+public class CreatedIndividualCustomerResponse {
     private int id;
 
     private String firstName;
@@ -37,9 +36,9 @@ public class UpdatedCustomerResponse {
 
     private List<Address> addresses;
 
-    private List<Account> accounts;
+    private String mobilePhoneNumber;
 
-//    private Contact contactInfo;
+    private String homePhoneNumber;
 
-    private LocalDateTime updatedDate;
+    private LocalDateTime createdDate;
 }

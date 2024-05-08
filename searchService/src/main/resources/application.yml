@@ -17,6 +17,14 @@ spring:
       database: turkcellcrmsearchdb
       host: localhost
       port: 27017
-  jackson:
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false # Avoids serializing dates as timestamps
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
