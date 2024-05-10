@@ -28,4 +28,7 @@ public class Account extends BaseEntity<Integer> {
 
     @Column(name = "customer_id")
     private int customerId;
+
+    @Column(name = "address_id")
+    private int addressId;
 }

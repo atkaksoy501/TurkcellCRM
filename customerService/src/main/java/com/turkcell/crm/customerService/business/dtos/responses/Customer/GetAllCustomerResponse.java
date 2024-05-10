@@ -35,7 +35,7 @@ public class GetAllCustomerResponse {
 
     private List<Address> addresses;
 
-    private List<Account> accounts;
+//    private List<Account> accounts;
 
 //    private Contact contactInfo;
 }

@@ -45,7 +45,7 @@ public class UpdateIndividualCustomerRequest {
 
     private List<Address> addresses;
 
-    private List<Account> accounts;
+//    private List<Account> accounts;
 
     @Size(min = 11, max = 11)
     private String mobilePhoneNumber;
