@@ -21,8 +21,10 @@ public class Customer extends BaseEntity<Integer> {
     @OneToMany(mappedBy = "customer")
     private List<Address> addresses;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Account> accounts;
+//    @ElementCollection
+//    @CollectionTable(name = "account_ids", joinColumns = @JoinColumn(name = "customer_id"))
+//    @Column(name = "account_id")
+//    private List<Integer> accountIds;
 
     @OneToOne
     @JoinColumn(name = "individual_customer_id", referencedColumnName = "id")
