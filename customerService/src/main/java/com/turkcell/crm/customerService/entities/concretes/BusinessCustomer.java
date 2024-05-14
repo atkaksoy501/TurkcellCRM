@@ -1,5 +1,6 @@
 package com.turkcell.crm.customerService.entities.concretes;
 
+import com.turkcell.crm.customerService.core.entities.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,8 +13,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "business_customers")
 public class BusinessCustomer extends Customer {
-    @Column(name = "business_customer_id", insertable = false, updatable = false)
-    private Integer businessCustomerId;
 
     @Column(name = "company_name")
     private String companyName;

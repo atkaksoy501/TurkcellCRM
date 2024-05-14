@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.kafka.producers;
 
-import com.turkcell.crm.common.events.identity.CreateIndividualCustomerEvent;
+import com.turkcell.crm.common.events.customer.CreateIndividualCustomerEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;

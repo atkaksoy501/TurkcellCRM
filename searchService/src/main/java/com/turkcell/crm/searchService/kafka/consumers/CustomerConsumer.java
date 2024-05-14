@@ -1,6 +1,6 @@
 package com.turkcell.crm.searchService.kafka.consumers;
 
-import com.turkcell.crm.common.events.identity.CreateIndividualCustomerEvent;
+import com.turkcell.crm.common.events.customer.CreateIndividualCustomerEvent;
 import com.turkcell.crm.searchService.business.abstracts.CustomerService;
 import com.turkcell.crm.searchService.entities.concretes.Customer;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class CustomerConsumer {
         customer.setEmail(customerCreatedEvent.getEmail());
         customer.setFirstName(customerCreatedEvent.getFirstName());
         customer.setLastName(customerCreatedEvent.getLastName());
-        customer.setNationalityId(customerCreatedEvent.getNationalityId());
+        customer.setNationalityId(customerCreatedEvent.getNationalityNumber());
         customer.setMobilePhoneNumber(customerCreatedEvent.getMobilePhoneNumber());
         customer.setAccountNumber(customerCreatedEvent.getAccountNumber());
         customer.setOrderNumber(customerCreatedEvent.getOrderNumber());

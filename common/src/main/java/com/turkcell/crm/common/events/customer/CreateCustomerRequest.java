@@ -1,4 +1,4 @@
-package com.turkcell.crm.common.events.identity;
+package com.turkcell.crm.common.events.customer;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

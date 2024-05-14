@@ -3,6 +3,7 @@ package com.turkcell.crm.customerService.api.controllers;
 import com.turkcell.crm.customerService.business.abstracts.IndividualCustomerService;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateIndividualCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateIndividualCustomerRequest;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class IndividualCustomersController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@RequestBody CreateIndividualCustomerRequest createIndividualCustomerRequest) {
+    public void add(@Valid @RequestBody CreateIndividualCustomerRequest createIndividualCustomerRequest) {
         individualCustomerService.save(createIndividualCustomerRequest);
     }
 

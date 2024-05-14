@@ -12,6 +12,11 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "addresses")
+@SequenceGenerator(
+        name = "base_sequence_generator",
+        sequenceName = "address_sequence",
+        allocationSize = 1
+)
 public class Address extends BaseEntity<Integer> {
     @Column(name = "city")
     private String city;

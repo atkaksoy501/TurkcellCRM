@@ -31,7 +31,7 @@ public class GetAllCustomerResponse {
 
     private String motherMaidenName;
 
-    private String nationalityId;
+    private String nationalityNumber;
 
     private List<Address> addresses;
 

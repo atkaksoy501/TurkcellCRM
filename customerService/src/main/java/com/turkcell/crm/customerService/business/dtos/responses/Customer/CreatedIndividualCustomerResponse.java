@@ -32,7 +32,7 @@ public class CreatedIndividualCustomerResponse {
 
     private String motherMaidenName;
 
-    private String nationalityId;
+    private String nationalityNumber;
 
     private List<Address> addresses;
 

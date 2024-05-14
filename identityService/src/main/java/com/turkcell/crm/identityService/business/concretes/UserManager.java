@@ -13,7 +13,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.turkcell.crm.common.events.identity.CreateCustomerRequest;
+import com.turkcell.crm.common.events.customer.CreateCustomerRequest;
+
+import java.time.LocalDateTime;
 
 @Service
 @AllArgsConstructor
@@ -22,24 +24,13 @@ public class UserManager implements UserService {
     private final ModelMapperService modelMapperService;
     private final PasswordEncoder passwordEncoder;
 
-
-    @KafkaListener(topics = {"customertopic"}, groupId = "1")
-    public void consume(CreateCustomerRequest createCustomerRequest){
-
-        RegisterRequest registerRequest =
-                this.modelMapperService.forRequest().map(createCustomerRequest,RegisterRequest.class);
-        registerRequest.setPassword("1");
-        register(registerRequest);
-    }
-
-
-
     @Override
-    public void register(RegisterRequest request) {
+    public void register(User user) {
         // TODO: Business Rule, Validation
-        User user = modelMapperService.forRequest().map(request,User.class);
-        String encodedPassword = passwordEncoder.encode(request.getPassword());
+//        User user = modelMapperService.forRequest().map(request,User.class);
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
+        user.setCreatedDate(LocalDateTime.now());
 
         userRepository.save(user);
     }

@@ -3,6 +3,7 @@ package com.turkcell.crm.customerService.business.dtos.requests.Customer;
 import com.turkcell.crm.customerService.core.enums.Gender;
 import com.turkcell.crm.customerService.entities.concretes.Address;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,7 +42,8 @@ public class UpdateIndividualCustomerRequest {
     private String motherMaidenName;
 
     @Size(min = 11, max = 11)
-    private String nationalityId;
+    @Pattern(regexp = "^[0-9]{11}$")
+    private String nationalityNumber;
 
     private List<Address> addresses;
 

@@ -13,8 +13,8 @@ public class IndividualCustomerBusinessRules {
     private final IndividualCustomerRepository individualCustomerRepository;
     private final MessageService messageService;
 
-    public void individualCustomerAlreadyExists(String nationalityId) {
-        if (individualCustomerRepository.existsByNationalityId(nationalityId)) {
+    public void individualCustomerAlreadyExists(String nationalNumber) {
+        if (individualCustomerRepository.existsByNationalityNumber(nationalNumber)) {
             throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.CUSTOMER_ALREADY_EXISTS));
         }
     }

@@ -14,24 +14,17 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "customers")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@SequenceGenerator(
+        name = "base_sequence_generator", //generator name
+        sequenceName = "customer_sequence", //this entity's sequence name
+        allocationSize = 1 //increment size
+)
 public class Customer extends BaseEntity<Integer> {
     @Column(name="email")
     private String email;
 
     @OneToMany(mappedBy = "customer")
     private List<Address> addresses;
-
-//    @ElementCollection
-//    @CollectionTable(name = "account_ids", joinColumns = @JoinColumn(name = "customer_id"))
-//    @Column(name = "account_id")
-//    private List<Integer> accountIds;
-
-    @OneToOne
-    @JoinColumn(name = "individual_customer_id", referencedColumnName = "id")
-    private IndividualCustomer individualCustomer;
-
-    @OneToOne
-    @JoinColumn(name = "business_customer_id", referencedColumnName = "id")
-    private BusinessCustomer businessCustomer;
 
 }

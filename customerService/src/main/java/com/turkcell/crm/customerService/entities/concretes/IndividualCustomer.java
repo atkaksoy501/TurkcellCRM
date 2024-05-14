@@ -14,8 +14,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "individual_customers")
 public class IndividualCustomer extends Customer {
-    @Column(name = "individual_customer_id", insertable = false, updatable = false)
-    private Integer individualCustomerId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -41,8 +39,8 @@ public class IndividualCustomer extends Customer {
     @Column(name = "mother_maiden_name")
     private String motherMaidenName;
 
-    @Column(name = "nationality_id")
-    private String nationalityId;
+    @Column(name = "nationality_number")
+    private String nationalityNumber;
 
     @Column(name = "mobile_phone_number")
     private String mobilePhoneNumber;
