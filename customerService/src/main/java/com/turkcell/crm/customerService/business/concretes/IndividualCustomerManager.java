@@ -6,6 +6,9 @@ import com.turkcell.crm.customerService.business.abstracts.IndividualCustomerSer
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateIndividualCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateIndividualCustomerRequest;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.CreatedIndividualCustomerResponse;
+import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetAllIndividualCustomersResponse;
+import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetIndividualCustomerResponseById;
+import com.turkcell.crm.customerService.business.dtos.responses.Customer.UpdatedIndividualCustomerResponse;
 import com.turkcell.crm.customerService.business.rules.IndividualCustomerBusinessRules;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.customerService.dataAccess.abstracts.IndividualCustomerRepository;
@@ -56,22 +59,35 @@ public class IndividualCustomerManager implements IndividualCustomerService {
     }
 
     @Override
-    public IndividualCustomer update(UpdateIndividualCustomerRequest individualCustomer) {
-        return null;
+    public UpdatedIndividualCustomerResponse update(UpdateIndividualCustomerRequest individualCustomer) {
+        individualCustomerBusinessRules.individualCustomerMustExists(individualCustomer.getId());
+        IndividualCustomer customer = modelMapperService.forUpdate().map(individualCustomer, IndividualCustomer.class);
+        customer.setUpdatedDate(LocalDateTime.now());
+        IndividualCustomer savedCustomer = individualCustomerRepository.save(customer);
+        return modelMapperService.forResponse().map(savedCustomer, UpdatedIndividualCustomerResponse.class);
     }
 
     @Override
-    public void delete(IndividualCustomer individualCustomer) {
-
+    public void delete(int id) {
+        individualCustomerBusinessRules.individualCustomerMustExists(id);
+        IndividualCustomer customer = individualCustomerRepository.findById(id).orElse(null);
+        customer.setActive(false);
+        customer.setDeletedDate(LocalDateTime.now());
+        individualCustomerRepository.save(customer);
     }
 
     @Override
-    public IndividualCustomer getById(int id) {
-        return null;
+    public GetIndividualCustomerResponseById getById(int id) {
+        individualCustomerBusinessRules.individualCustomerMustExists(id);
+        IndividualCustomer customer = individualCustomerRepository.findById(id).orElse(null);
+        return modelMapperService.forResponse().map(customer, GetIndividualCustomerResponseById.class);
     }
 
     @Override
-    public List<IndividualCustomer> getAll() {
-        return null;
+    public List<GetAllIndividualCustomersResponse> getAll() {
+        List<IndividualCustomer> customers = individualCustomerRepository.findAll();
+        return customers.stream()
+                .map(customer -> modelMapperService.forResponse().map(customer, GetAllIndividualCustomersResponse.class))
+                .toList();
     }
 }

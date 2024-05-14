@@ -13,9 +13,15 @@ public class IndividualCustomerBusinessRules {
     private final IndividualCustomerRepository individualCustomerRepository;
     private final MessageService messageService;
 
-    public void individualCustomerAlreadyExists(String nationalNumber) {
+    public void individualCustomerMustBeUnique(String nationalNumber) {
         if (individualCustomerRepository.existsByNationalityNumber(nationalNumber)) {
             throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.CUSTOMER_ALREADY_EXISTS));
+        }
+    }
+
+    public void individualCustomerMustExists(int id) {
+        if (!individualCustomerRepository.existsById(id)) {
+            throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.CUSTOMER_NOT_FOUND));
         }
     }
 }

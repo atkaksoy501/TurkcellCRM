@@ -7,12 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class GetCustomerResponseById {
+public class UpdatedIndividualCustomerResponse {
     private int id;
 
     private String firstName;
@@ -38,4 +39,6 @@ public class GetCustomerResponseById {
 //    private List<Account> accounts;
 
 //    private Contact contactInfo;
+
+    private LocalDateTime updatedDate;
 }
