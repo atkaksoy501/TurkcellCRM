@@ -35,7 +35,7 @@ public class IndividualCustomerManager implements IndividualCustomerService {
     @Transactional
     public CreatedIndividualCustomerResponse save(CreateIndividualCustomerRequest individualCustomer) {
 
-//        individualCustomerBusinessRules.individualCustomerAlreadyExists(individualCustomer.getNationalityId());
+        individualCustomerBusinessRules.individualCustomerMustBeUnique(individualCustomer.getNationalityNumber());
         IndividualCustomer customer = modelMapperService.forRequest().map(individualCustomer, IndividualCustomer.class);
         customer.setCreatedDate(LocalDateTime.now());
 
