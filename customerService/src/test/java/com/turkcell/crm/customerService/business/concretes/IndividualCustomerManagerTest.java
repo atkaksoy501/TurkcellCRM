@@ -1,6 +1,7 @@
 package com.turkcell.crm.customerService.business.concretes;
 
 import com.turkcell.crm.customerService.business.dtos.requests.Customer.CreateIndividualCustomerRequest;
+import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateIndividualCustomerRequest;
 import com.turkcell.crm.customerService.business.rules.IndividualCustomerBusinessRules;
 import com.turkcell.crm.customerService.core.business.abstracts.MessageService;
 import com.turkcell.crm.customerService.core.business.concretes.MessageManager;
@@ -20,41 +21,66 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class IndividualCustomerManagerTest {
 
-    IndividualCustomerRepository individualCustomerRepository;
+    private IndividualCustomerRepository individualCustomerRepository;
+    private IndividualCustomerManager individualCustomerManager;
 
     @BeforeEach
     void setUp(){
+        individualCustomerRepository = Mockito.mock(IndividualCustomerRepository.class);
+        ModelMapper mapper = new ModelMapper();
+        ModelMapperService modelMapperService = new ModelMapperManager(mapper);
+        MessageService messageService = Mockito.mock(MessageManager.class);
+        IndividualCustomerBusinessRules individualCustomerBusinessRules = new IndividualCustomerBusinessRules(individualCustomerRepository, messageService);
+        IndividualCustomerProducer individualCustomerProducer = Mockito.mock(IndividualCustomerProducer.class);
+        IndividualCustomerIdentityProducer individualCustomerIdentityProducer = Mockito.mock(IndividualCustomerIdentityProducer.class);
+        individualCustomerManager = new IndividualCustomerManager(modelMapperService,individualCustomerRepository,individualCustomerBusinessRules,individualCustomerProducer,individualCustomerIdentityProducer);
     }
 
     @Test
     void addIndividualCustomerWithExistingCustomer_ShouldThrowException(){
 
-        individualCustomerRepository = Mockito.mock(IndividualCustomerRepository.class);
         Mockito.when(individualCustomerRepository.existsByNationalityNumber("111")).thenReturn(true);
         IndividualCustomer individualCustomer = new IndividualCustomer();
         individualCustomer.setNationalityNumber("111");
         Mockito.when(individualCustomerRepository.save(individualCustomer)).thenReturn(individualCustomer);
 
-        ModelMapper mapper = new ModelMapper();
-        ModelMapperService modelMapperService = new ModelMapperManager(mapper);
+        CreateIndividualCustomerRequest createIndividualCustomerRequest = new CreateIndividualCustomerRequest();
+        createIndividualCustomerRequest.setNationalityNumber("111");
 
-        MessageService messageService = Mockito.mock(MessageManager.class);
+        assertThrows(BusinessException.class,() -> {
+            individualCustomerManager.save(createIndividualCustomerRequest);
+        });
+    }
 
+    @Test
+    void updateIndividualCustomerWithNonExistingCustomer_ShouldThrowException(){
 
-        IndividualCustomerBusinessRules individualCustomerBusinessRules = new IndividualCustomerBusinessRules(individualCustomerRepository,messageService);
+        Mockito.when(individualCustomerRepository.existsById(1)).thenReturn(false);
+        IndividualCustomer individualCustomer = new IndividualCustomer();
+        individualCustomer.setId(1);
+        Mockito.when(individualCustomerRepository.save(individualCustomer)).thenReturn(individualCustomer);
 
-        IndividualCustomerProducer individualCustomerProducer = Mockito.mock(IndividualCustomerProducer.class);
-        IndividualCustomerIdentityProducer individualCustomerIdentityProducer = Mockito.mock(IndividualCustomerIdentityProducer.class);
+        UpdateIndividualCustomerRequest createIndividualCustomerRequest = new UpdateIndividualCustomerRequest();
+        createIndividualCustomerRequest.setId(1);
 
-        IndividualCustomerManager individualCustomerManager = new IndividualCustomerManager(modelMapperService,individualCustomerRepository,individualCustomerBusinessRules,individualCustomerProducer,individualCustomerIdentityProducer);
+        assertThrows(BusinessException.class,() -> {
+            individualCustomerManager.update(createIndividualCustomerRequest);
+        });
+    }
+
+    @Test
+    void addIndividualCustomerSuccess(){
+
+        Mockito.when(individualCustomerRepository.existsByNationalityNumber("111")).thenReturn(false);
+        IndividualCustomer individualCustomer = new IndividualCustomer();
+        individualCustomer.setNationalityNumber("111");
+        Mockito.when(individualCustomerRepository.save(individualCustomer)).thenReturn(individualCustomer);
 
         CreateIndividualCustomerRequest createIndividualCustomerRequest = new CreateIndividualCustomerRequest();
         createIndividualCustomerRequest.setNationalityNumber("111");
 
-        assertThrows(BusinessException.class,() ->{
-
-            individualCustomerManager.save(createIndividualCustomerRequest);
-        });
+        individualCustomerManager.save(createIndividualCustomerRequest);
+        assert true;
     }
 
 }
