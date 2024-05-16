@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="invoiceService" />
         <module name="identityService" />
         <module name="catalogService" />
         <module name="common" />
@@ -29,6 +30,7 @@
       <module name="discoveryServer" options="-parameters" />
       <module name="gatewayService" options="-parameters" />
       <module name="identityService" options="-parameters" />
+      <module name="invoiceService" options="-parameters" />
       <module name="searchService" options="-parameters" />
     </option>
   </component>
