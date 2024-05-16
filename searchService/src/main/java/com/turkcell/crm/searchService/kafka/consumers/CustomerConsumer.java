@@ -24,7 +24,7 @@ public class CustomerConsumer {
         customer.setLastName(customerCreatedEvent.getLastName());
         customer.setNationalityId(customerCreatedEvent.getNationalityNumber());
         customer.setMobilePhoneNumber(customerCreatedEvent.getMobilePhoneNumber());
-        customer.setAccountNumber(customerCreatedEvent.getAccountNumber());
+        customer.setAccountNumbers(customerCreatedEvent.getAccountNumbers());
         customer.setOrderNumber(customerCreatedEvent.getOrderNumber());
         this.customerService.add(customer);
     }

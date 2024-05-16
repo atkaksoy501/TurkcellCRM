@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.List;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +32,7 @@ public class Customer {
     private String mobilePhoneNumber;
 
     @Field(name = "account_number")
-    private String accountNumber;
+    private List<String> accountNumbers;
 
     @Field(name = "order_number")
     private String orderNumber;

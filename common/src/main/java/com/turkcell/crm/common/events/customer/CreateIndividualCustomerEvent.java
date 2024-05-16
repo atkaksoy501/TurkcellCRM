@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,7 +22,7 @@ public class CreateIndividualCustomerEvent {
 
     private String mobilePhoneNumber;
 
-    private String accountNumber;
+    private List<String> accountNumbers;
 
     private String orderNumber;
 }

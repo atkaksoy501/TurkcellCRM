@@ -44,8 +44,8 @@ public class IndividualCustomerManager implements IndividualCustomerService {
         CreatedIndividualCustomerResponse response = modelMapperService.forResponse().map(savedCustomer, CreatedIndividualCustomerResponse.class);
 
         CreateIndividualCustomerEvent event = modelMapperService.forRequest().map(response, CreateIndividualCustomerEvent.class);
-        event.setAccountNumber("1"); //todo: to be generated
-        event.setOrderNumber("1");
+        event.setAccountNumbers(customer.getAddresses().stream().map(address -> address.getId().toString()).toList());
+//        event.setOrderNumber("1"); //todo: ???
 
         CreateCustomerIdentityEvent identityEvent = new CreateCustomerIdentityEvent();
         identityEvent.setEmail(individualCustomer.getEmail());
