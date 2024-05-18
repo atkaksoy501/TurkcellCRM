@@ -1,0 +1,5 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ú¤»¥J$cbe509be-7760-4cbd-8a0f-9e0653fc3522
+„
+java:S6353-"<Use concise character class syntax '\\d' instead of '[0-9]'.(õÂ¯‚üÿÿÿÿ8Æ¾êÂ÷1J$4e512782-8997-4ef3-9c6f-dc90ccde940b
+~	java:S1252"<This block of commented-out lines of code should be removed.(€†‘É8…ÆÓ›ö1J$3ecfc23b-2c23-4a3f-9814-3b81d41665cd

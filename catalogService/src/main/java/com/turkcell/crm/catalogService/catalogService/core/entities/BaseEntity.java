@@ -31,5 +31,5 @@ public class BaseEntity<T extends Serializable> {
     private LocalDateTime deletedDate;
 
     @Column(name = "active")
-    private Boolean active;
+    private boolean active;
 }

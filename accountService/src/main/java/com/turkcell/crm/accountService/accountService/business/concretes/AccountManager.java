@@ -29,7 +29,7 @@ public class AccountManager implements AccountService {
 
     @Override
     public List<GetAllAccountResponse> getAll() {
-        List<Account> accounts = accountRepository.findAll();
+        List<Account> accounts = accountRepository.findAll().stream().filter(Account::isActive).toList();
         return accounts.stream().map(
                 account -> this.modelMapperService.forResponse().map(account, GetAllAccountResponse.class)
         ).toList();

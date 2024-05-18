@@ -21,4 +21,7 @@ public class CreateAccountRequest {
 
     @NotNull
     private int customerId;
+
+    @NotNull
+    private int addressId;
 }

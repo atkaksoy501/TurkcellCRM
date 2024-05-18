@@ -1,0 +1,11 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¦ž£ˆùÿÿÿÿJ$eaf95abd-52e7-4c59-bda6-6f276dad9d67
+~	java:S125"<This block of commented-out lines of code should be removed.( Äë«8¹²àÃ÷1J$bed2d591-7cd0-4d51-ac78-86f243b24a33
+s
+java:S1135"2Complete the task associated to this TODO comment.(ÐÀ´ûÿÿÿÿJ$a9b73aae-7822-43ca-b9e6-b0338c49475f
+¬
+java:S1128"dRemove this unused import 'com.turkcell.crm.identityService.business.dtos.requests.RegisterRequest'.(äë·­ûÿÿÿÿ8ÓàÄ÷1J$a40ecfe4-0c43-4d37-bf36-3c10e9816333
+’
+java:S1128"ORemove this unused import 'org.springframework.kafka.annotation.KafkaListener'.(ýª«¬8ÓàÄ÷1J$0226d67d-b494-4738-af67-6817fcc88f4d
+
+java:S1128"ZRemove this unused import 'com.turkcell.crm.common.events.customer.CreateCustomerRequest'.(â˜¤š8ÓàÄ÷1J$bf24980a-34ba-496f-868b-c6746e781ea6
