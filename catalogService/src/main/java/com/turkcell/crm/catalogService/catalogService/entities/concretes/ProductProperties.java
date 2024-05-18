@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "catalog_properties")
-public class CatalogProperties extends BaseEntity<Integer> {
+@Table(name = "product_properties")
+public class ProductProperties extends BaseEntity<Integer> {
 
-    @Column(name="catalog_id")
-    private int catalogId;
+    @Column(name="product_id")
+    private int productId;
 
     @Column(name="property_id")
     private int propertyId;
@@ -23,8 +23,8 @@ public class CatalogProperties extends BaseEntity<Integer> {
     private String value;
 
     @ManyToOne
-    @JoinColumn(name="catalog_id", referencedColumnName = "id")
-    private Catalog catalog;
+    @JoinColumn(name="product_id", referencedColumnName = "id")
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name="property_id", referencedColumnName = "id")

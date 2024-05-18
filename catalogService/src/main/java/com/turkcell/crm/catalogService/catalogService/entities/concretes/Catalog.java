@@ -18,18 +18,9 @@ import java.util.List;
 @Table(name = "catalogs")
 public class Catalog extends BaseEntity<Integer> {
 
-    @Column(name="catalog_name")
-    private String catalogName;
-
-    @Column(name="description")
-    private String description;
-
-    @Column(name="price")
-    private double price;
-
-    @Column(name="stock_amount")
-    private int stockAmount; //modem gibi cihazlar için
+    @Column(name="name")
+    private String name;
 
     @OneToMany(mappedBy = "catalog")
-    private List<CatalogProperties> catalogProperties;
+    private List<Product> productList;
 }

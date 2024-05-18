@@ -22,5 +22,5 @@ public class Property extends BaseEntity<Integer> {
     private String propertyName;
 
     @OneToMany(mappedBy = "property")
-    private List<CatalogProperties> catalogProperties;
+    private List<ProductProperties> productProperties;
 }
