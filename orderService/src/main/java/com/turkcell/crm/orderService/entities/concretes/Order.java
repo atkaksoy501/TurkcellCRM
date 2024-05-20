@@ -15,10 +15,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "order")
 public class Order extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name="id")
-    private int id;
+
 
     @Column(name="total_amount")
     private double totalAmount;
