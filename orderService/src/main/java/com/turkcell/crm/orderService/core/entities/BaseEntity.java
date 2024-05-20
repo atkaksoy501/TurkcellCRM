@@ -34,4 +34,7 @@ public class BaseEntity<T extends Serializable> {
     @Column(name = "deleteDate")
     private LocalDateTime deletedDate;
 
+    @Column(name = "active")
+    private boolean active;
+
 }

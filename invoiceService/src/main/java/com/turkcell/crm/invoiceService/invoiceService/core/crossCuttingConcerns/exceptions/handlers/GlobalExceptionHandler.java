@@ -1,9 +1,9 @@
 package com.turkcell.crm.invoiceService.invoiceService.core.crossCuttingConcerns.exceptions.handlers;
 
 
-import com.turkcell.crm.customerService.core.crossCuttingConcerns.exceptions.problemDetails.BusinessProblemDetails;
-import com.turkcell.crm.customerService.core.crossCuttingConcerns.exceptions.problemDetails.ValidationProblemDetails;
-import com.turkcell.crm.customerService.core.crossCuttingConcerns.exceptions.types.BusinessException;
+import com.turkcell.crm.invoiceService.invoiceService.core.crossCuttingConcerns.exceptions.problemDetails.BusinessProblemDetails;
+import com.turkcell.crm.invoiceService.invoiceService.core.crossCuttingConcerns.exceptions.problemDetails.ValidationProblemDetails;
+import com.turkcell.crm.invoiceService.invoiceService.core.crossCuttingConcerns.exceptions.types.BusinessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

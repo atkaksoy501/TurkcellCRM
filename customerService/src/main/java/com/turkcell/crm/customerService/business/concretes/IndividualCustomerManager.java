@@ -61,7 +61,8 @@ public class IndividualCustomerManager implements IndividualCustomerService {
     @Override
     public UpdatedIndividualCustomerResponse update(UpdateIndividualCustomerRequest individualCustomer) {
         individualCustomerBusinessRules.individualCustomerMustExists(individualCustomer.getId());
-        IndividualCustomer customer = modelMapperService.forUpdate().map(individualCustomer, IndividualCustomer.class);
+        IndividualCustomer customer = individualCustomerRepository.findById(individualCustomer.getId()).orElse(null);
+        modelMapperService.forUpdate().map(individualCustomer, customer);
         customer.setUpdatedDate(LocalDateTime.now());
         IndividualCustomer savedCustomer = individualCustomerRepository.save(customer);
         return modelMapperService.forResponse().map(savedCustomer, UpdatedIndividualCustomerResponse.class);

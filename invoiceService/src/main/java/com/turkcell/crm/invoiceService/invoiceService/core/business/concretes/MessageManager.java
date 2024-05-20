@@ -1,7 +1,7 @@
 package com.turkcell.crm.invoiceService.invoiceService.core.business.concretes;
 
 
-import com.turkcell.crm.customerService.core.business.abstracts.MessageService;
+import com.turkcell.crm.invoiceService.invoiceService.core.business.abstracts.MessageService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
