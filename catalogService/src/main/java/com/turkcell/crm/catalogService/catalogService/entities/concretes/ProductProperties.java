@@ -2,13 +2,12 @@ package com.turkcell.crm.catalogService.catalogService.entities.concretes;
 
 import com.turkcell.crm.catalogService.catalogService.core.entities.BaseEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "product_properties")
 public class ProductProperties extends BaseEntity<Integer> {

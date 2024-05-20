@@ -16,6 +16,7 @@
         <module name="gatewayService" />
         <module name="searchService" />
         <module name="accountService" />
+        <module name="orderService" />
         <module name="discoveryServer" />
       </profile>
     </annotationProcessing>
@@ -31,6 +32,7 @@
       <module name="gatewayService" options="-parameters" />
       <module name="identityService" options="-parameters" />
       <module name="invoiceService" options="-parameters" />
+      <module name="orderService" options="-parameters" />
       <module name="searchService" options="-parameters" />
     </option>
   </component>
