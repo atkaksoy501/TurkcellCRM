@@ -1,0 +1,23 @@
+package com.turkcell.crm.orderService.business.dtos.responses;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class CreatedOrderResponse {
+
+    private int id;
+
+    private double totalAmount;
+
+    private int addressId;
+
+    private List<Integer> productIds;
+
+    private int accountId;
+}

@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.business.dtos.responses.Customer;
 
-import com.turkcell.crm.customerService.core.enums.Gender;
+import com.turkcell.crm.customerService.entities.concretes.enums.Gender;
 import com.turkcell.crm.customerService.entities.concretes.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.turkcell.crm.customerService.core.enums;
+package com.turkcell.crm.customerService.entities.concretes.enums;
 
 public enum AccountStatus {
     ACTIVE,

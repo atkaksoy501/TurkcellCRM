@@ -1,7 +1,7 @@
 package com.turkcell.crm.customerService.entities.concretes;
 
 import com.turkcell.crm.customerService.core.entities.BaseEntity;
-import com.turkcell.crm.customerService.core.enums.AddressType;
+import com.turkcell.crm.customerService.entities.concretes.enums.AddressType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

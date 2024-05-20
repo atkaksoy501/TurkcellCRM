@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.entities.concretes;
 
-import com.turkcell.crm.customerService.core.enums.Gender;
+import com.turkcell.crm.customerService.entities.concretes.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

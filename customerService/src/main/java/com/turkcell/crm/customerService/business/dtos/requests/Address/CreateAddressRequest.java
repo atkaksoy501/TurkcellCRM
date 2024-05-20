@@ -1,8 +1,6 @@
 package com.turkcell.crm.customerService.business.dtos.requests.Address;
 
-import com.turkcell.crm.customerService.core.enums.AddressType;
-import com.turkcell.crm.customerService.entities.concretes.Customer;
-import jakarta.persistence.*;
+import com.turkcell.crm.customerService.entities.concretes.enums.AddressType;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

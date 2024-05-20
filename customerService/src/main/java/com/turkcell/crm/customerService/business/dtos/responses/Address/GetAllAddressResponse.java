@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.business.dtos.responses.Address;
 
-import com.turkcell.crm.customerService.core.enums.AddressType;
+import com.turkcell.crm.customerService.entities.concretes.enums.AddressType;
 import com.turkcell.crm.customerService.entities.concretes.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Data;

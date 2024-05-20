@@ -8,23 +8,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order extends BaseEntity {
-
 
     @Column(name="total_amount")
     private double totalAmount;
 
-    @OneToOne
-    @JoinColumn(name="account", referencedColumnName = "id")
-    private Account account;
+    @Column(name="address_id")
+    private int addressId;
 
+    @ElementCollection
+    @CollectionTable(name = "product_ids")
+    @Column(name = "products")
+    private List<Integer> productIds;
 
-
-
+    @Column(name="account_id")
+    private int accountId;
 }

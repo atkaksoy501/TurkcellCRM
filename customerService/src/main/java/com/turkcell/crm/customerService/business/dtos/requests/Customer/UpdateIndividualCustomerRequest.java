@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.business.dtos.requests.Customer;
 
-import com.turkcell.crm.customerService.core.enums.Gender;
+import com.turkcell.crm.customerService.entities.concretes.enums.Gender;
 import com.turkcell.crm.customerService.entities.concretes.Address;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
