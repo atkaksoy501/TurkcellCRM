@@ -28,6 +28,18 @@ public class JwtService
         Date expirationDate = extractExpiration(token);
         return userDetails.getUsername().equals(username) && !expirationDate.before(new Date());
     }
+    public Boolean validateToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(getSignKey()).build().parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+
+        }
+    }
+
+
+
 
     private Date extractExpiration(String token) {
         Claims claims = Jwts
