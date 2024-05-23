@@ -1,4 +1,4 @@
-package com.turkcell.crm.customerService.business.messages;
+package com.turkcell.crm.searchService.business.messages;
 
 public class Messages {
     public static class IndividualCustomerErrors {
