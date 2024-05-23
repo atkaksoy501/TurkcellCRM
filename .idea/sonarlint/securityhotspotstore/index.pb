@@ -487,3 +487,7 @@ bidentityService/src/main/java/com/turkcell/crm/identityService/api/controllers/
 `gatewayService/src/main/java/com/turkcell/crm/gatewayService/filter/JwtAuthenticationFilter.java,2\d\2d992b248405b22e11deca9a0d8df382e1a841e2
 …
 UgatewayService/src/main/java/com/turkcell/crm/gatewayService/config/Configration.java,0\c\0cdfe57547c241279d7ff473dd28336dce4fe2e9
+£
+scustomerService/src/main/java/com/turkcell/crm/customerService/core/mernisVerification/abstracts/MernisService.java,2\4\24601bed5d1cffff6d04c785c40f14db84237c7e
+‹
+[gatewayService/src/main/java/com/turkcell/crm/gatewayService/GatewayServiceApplication.java,5\5\55084dcf140e1d059c3254dadfb0170bf5fdfa9a

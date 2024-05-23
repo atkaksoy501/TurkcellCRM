@@ -28,7 +28,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.turkcell.crm</groupId>
-			<artifactId>identityService</artifactId>
+			<artifactId>identityService</artifactId> <!-- todo: tartışılmalı. direkt bağımlılık olmamalı. -->
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
