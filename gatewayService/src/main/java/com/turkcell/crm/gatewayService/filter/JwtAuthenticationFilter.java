@@ -14,7 +14,6 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAut
 
     public JwtAuthenticationFilter(JwtService jwtService){
         this.jwtService=jwtService;
-
     }
 
     public JwtAuthenticationFilter() {
@@ -42,11 +41,8 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAut
         return null;
     }
 
-
     public static class Config {
         // Konfigürasyon özellikleri buraya eklenebilir
     }
-
-
 }
 

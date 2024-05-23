@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface CustomerService {
     void add(Customer customer);
-    void searchByNationalityId(String nationalityId);
 
     List<Customer> searchCustomers(
             Optional<String> nationalityId,
@@ -15,6 +14,7 @@ public interface CustomerService {
             Optional<Long> accountNumber,
             Optional<Long> gsmNumber,
             Optional<String> firstName,
+            Optional<String> middleName,
             Optional<String> lastName,
             Optional<Long> orderNumber);
 }

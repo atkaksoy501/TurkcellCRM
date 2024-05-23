@@ -15,8 +15,8 @@ public class CustomersController {
     private final CustomerService customerService;
 
     @GetMapping("/search/{natinonalityId}")
-    public void searchByNationalityId(@PathVariable String natinonalityId) {
-        customerService.searchByNationalityId(natinonalityId);
+    public void searchByNationalityId(@PathVariable String nationalityId) {
+        customerService.searchByNationalityId(nationalityId);
     }
 
     @GetMapping("/search")

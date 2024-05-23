@@ -11,6 +11,4 @@ public class Configration {
     public JwtService jwtService() {
         return new JwtService();
     }
-
-
 }

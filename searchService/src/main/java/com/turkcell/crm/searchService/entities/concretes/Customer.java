@@ -24,6 +24,9 @@ public class Customer {
     @Field(name = "first_name")
     private String firstName;
 
+    @Field(name = "middle_name")
+    private String middleName;
+
     @Field(name = "last_name")
     private String lastName;
 
@@ -39,6 +42,6 @@ public class Customer {
     @Field(name = "order_number")
     private String orderNumber;
 
+    @Field(name = "customer_id")
     private int customerId;
-    private String secondName;
 }

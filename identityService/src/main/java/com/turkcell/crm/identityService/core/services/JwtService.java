@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import java.security.Key;
 import java.util.Date;
 import java.util.Map;
+
+
 @Service
 public class JwtService
 {
@@ -28,18 +30,15 @@ public class JwtService
         Date expirationDate = extractExpiration(token);
         return userDetails.getUsername().equals(username) && !expirationDate.before(new Date());
     }
+
     public Boolean validateToken(String token) {
         try {
             Jwts.parser().setSigningKey(getSignKey()).build().parseClaimsJws(token);
             return true;
         } catch (Exception e) {
             return false;
-
         }
     }
-
-
-
 
     private Date extractExpiration(String token) {
         Claims claims = Jwts
@@ -50,6 +49,7 @@ public class JwtService
                 .getBody();
         return claims.getExpiration();
     }
+
     public String extractUser(String token) {
         Claims claims = Jwts
                 .parser()
@@ -59,7 +59,7 @@ public class JwtService
                 .getBody();
         return claims.getSubject();
     }
-    // 10:15
+
     private String createToken(Map<String, Object> claims, String userName) {
         return Jwts.builder()
                 .setClaims(claims)
@@ -69,7 +69,6 @@ public class JwtService
                 .signWith(getSignKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
-
 
     private Key getSignKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);

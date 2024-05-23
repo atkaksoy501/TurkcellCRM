@@ -1,4 +1,3 @@
 
-›	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–ºÇ8ıï¹¹ù1J$f8ef84df-ef0f-4c96-bed8-82846b56bb11
-›
-java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8†Ã¹ù1J$174a8b72-c779-488a-a8e2-fa11a0690700
+›	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–ºÇ8Œàä±ú1J$93cadd4a-056c-4f03-92e3-5fca441c2947
+~	java:S107"<Method has 8 parameters, which is greater than 7 authorized.(Áı8’¸ñ³ú1J$a330ce22-a805-4a74-a09c-39036e16dbd0

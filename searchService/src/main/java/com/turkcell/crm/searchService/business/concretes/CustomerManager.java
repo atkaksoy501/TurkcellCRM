@@ -4,7 +4,6 @@ import com.turkcell.crm.searchService.business.abstracts.CustomerService;
 import com.turkcell.crm.searchService.dataAccess.abstracts.CustomerRepository;
 import com.turkcell.crm.searchService.entities.concretes.Customer;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -23,17 +22,13 @@ public class CustomerManager implements CustomerService {
         customerRepository.save(customer);
     }
 
-    @Override
-    public void searchByNationalityId(String nationalityId) {
-        customerRepository.findByNationalityId(nationalityId);
-    }
-
     public List<Customer> searchCustomers(
             Optional<String> nationalityId,
             Optional<Long> customerId,
             Optional<Long> accountNumber,
             Optional<Long> gsmNumber,
             Optional<String> firstName,
+            Optional<String> middleName,
             Optional<String> lastName,
             Optional<Long> orderNumber) {
 
@@ -44,6 +39,7 @@ public class CustomerManager implements CustomerService {
         accountNumber.ifPresent(id -> query.addCriteria(Criteria.where("accountNumber").is(id)));
         gsmNumber.ifPresent(id -> query.addCriteria(Criteria.where("gsmNumber").is(id)));
         firstName.ifPresent(name -> query.addCriteria(Criteria.where("firstName").regex("^" + name, "i")));
+        middleName.ifPresent(name -> query.addCriteria(Criteria.where("middleName").regex("^" + name, "i")));
         lastName.ifPresent(name -> query.addCriteria(Criteria.where("lastName").regex("^" + name, "i")));
         orderNumber.ifPresent(number -> query.addCriteria(Criteria.where("orderNumber").is(number)));
 
