@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "orders")
-public class Order extends BaseEntity {
+public class Order extends BaseEntity<Integer> {
 
     @Column(name="total_amount")
     private double totalAmount;

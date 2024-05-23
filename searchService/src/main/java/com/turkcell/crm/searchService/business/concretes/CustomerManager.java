@@ -28,9 +28,6 @@ public class CustomerManager implements CustomerService {
     public void add(Customer customer) {customerRepository.save(customer);}
 
     @Override
-    public void searchByNationalityId(String nationalityId) {customerRepository.findByNationalityId(nationalityId);}
-
-    @Override
     public Page<Customer> searchCustomers(
             Optional<String> nationalityId,
             Optional<String> customerId,
@@ -46,7 +43,7 @@ public class CustomerManager implements CustomerService {
 
         nationalityId.ifPresent(id -> {
             customerBusinessRules.validateNationalityId(id);
-            query.addCriteria(Criteria.where("nationalityId").is(Long.parseLong(id)));
+            query.addCriteria(Criteria.where("nationalityId").is(id));
         });
         customerId.ifPresent(id -> {
             customerBusinessRules.validateCustomerId(id);
@@ -69,6 +66,7 @@ public class CustomerManager implements CustomerService {
         });
 
         long total = mongoTemplate.count(query, Customer.class);
+
         List<Customer> customers = mongoTemplate.find(query.with(pageable), Customer.class);
 
         customerBusinessRules.checkCustomerFound(!customers.isEmpty());

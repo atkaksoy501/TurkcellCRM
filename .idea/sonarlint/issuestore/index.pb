@@ -491,3 +491,13 @@ UgatewayService/src/main/java/com/turkcell/crm/gatewayService/config/Configratio
 scustomerService/src/main/java/com/turkcell/crm/customerService/core/mernisVerification/abstracts/MernisService.java,2\4\24601bed5d1cffff6d04c785c40f14db84237c7e
 ‹
 [gatewayService/src/main/java/com/turkcell/crm/gatewayService/GatewayServiceApplication.java,5\5\55084dcf140e1d059c3254dadfb0170bf5fdfa9a
+¥
+ucatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/entities/concretes/ProductProperties.java,4\6\46029dcc8a1eef1e8fa2c5325acdb20d8744c0fa
+›
+kcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/entities/concretes/Product.java,a\0\a0cfac1269b74744ae4dfb7dc531d417b8a25bee
+£
+scustomerService/src/main/java/com/turkcell/crm/customerService/core/mernisVerification/concretes/MernisManager.java,f\7\f71a3eec6ba02dd70b8ee4d5177747eee1a7c472
+š
+jcustomerService/src/main/java/com/turkcell/crm/customerService/core/business/concretes/MessageManager.java,3\3\332fb20644f82aa301ee392098c0d502144aa635
+”
+dsearchService/src/main/java/com/turkcell/crm/searchService/business/rules/CustomerBusinessRules.java,5\b\5b9f06692d3e84dece69002d639789a9e1efb1c9

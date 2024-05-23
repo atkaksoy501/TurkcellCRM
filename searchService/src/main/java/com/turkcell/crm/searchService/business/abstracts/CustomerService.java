@@ -10,8 +10,6 @@ import java.util.Optional;
 public interface CustomerService {
     void add(Customer customer);
 
-   // burda genel arama yapıyoruz istere göre bir durum söz konusu değil
-    void searchByNationalityId(String nationalityId);
 
     Page<Customer> searchCustomers(
             Optional<String> nationalityId,

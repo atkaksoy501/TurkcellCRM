@@ -16,11 +16,6 @@ import java.util.Optional;
 public class CustomersController {
     private final CustomerService customerService;
 
-    @GetMapping("/search/{natinonalityId}")
-    public void searchByNationalityId(@PathVariable String nationalityId) {
-        customerService.searchByNationalityId(nationalityId);
-    }
-
     @GetMapping("/search")
     public Page<Customer> searchCustomers(
             @RequestParam Optional<String> nationalityId,
@@ -28,6 +23,7 @@ public class CustomersController {
             @RequestParam Optional<Long> accountNumber,
             @RequestParam Optional<Long> gsmNumber,
             @RequestParam Optional<String> firstName,
+            @RequestParam Optional<String> middleName,
             @RequestParam Optional<String> lastName,
             @RequestParam Optional<Long> orderNumber,
             @RequestParam(defaultValue = "0") int page,
@@ -35,6 +31,6 @@ public class CustomersController {
 
         Pageable pageable = PageRequest.of(page, size);
         return customerService.searchCustomers(
-                nationalityId, customerId, accountNumber, gsmNumber, firstName, lastName, orderNumber, pageable);
+                nationalityId, customerId, accountNumber, gsmNumber, firstName, middleName, lastName, orderNumber, pageable);
     }
 }
