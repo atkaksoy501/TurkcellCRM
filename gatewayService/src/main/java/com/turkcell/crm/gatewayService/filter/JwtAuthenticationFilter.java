@@ -13,7 +13,7 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAut
     private JwtService jwtService;
 
     public JwtAuthenticationFilter(JwtService jwtService){
-        this.jwtService=jwtService;
+        this.jwtService = jwtService;
     }
 
     public JwtAuthenticationFilter() {

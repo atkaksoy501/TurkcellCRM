@@ -6,6 +6,7 @@ import com.turkcell.crm.customerService.business.rules.IndividualCustomerBusines
 import com.turkcell.crm.customerService.core.business.abstracts.MessageService;
 import com.turkcell.crm.customerService.core.business.concretes.MessageManager;
 import com.turkcell.crm.customerService.core.crossCuttingConcerns.exceptions.types.BusinessException;
+import com.turkcell.crm.customerService.core.mernisVerification.abstracts.MernisService;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperManager;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.customerService.dataAccess.abstracts.IndividualCustomerRepository;
@@ -23,17 +24,19 @@ class IndividualCustomerManagerTest {
 
     private IndividualCustomerRepository individualCustomerRepository;
     private IndividualCustomerManager individualCustomerManager;
+    private MernisService mernisService;
 
     @BeforeEach
     void setUp(){
         individualCustomerRepository = Mockito.mock(IndividualCustomerRepository.class);
+        mernisService = Mockito.mock(MernisService.class);
         ModelMapper mapper = new ModelMapper();
         ModelMapperService modelMapperService = new ModelMapperManager(mapper);
         MessageService messageService = Mockito.mock(MessageManager.class);
-        IndividualCustomerBusinessRules individualCustomerBusinessRules = new IndividualCustomerBusinessRules(individualCustomerRepository, messageService);
+        IndividualCustomerBusinessRules individualCustomerBusinessRules = new IndividualCustomerBusinessRules(individualCustomerRepository, messageService, mernisService);
         IndividualCustomerProducer individualCustomerProducer = Mockito.mock(IndividualCustomerProducer.class);
         IndividualCustomerIdentityProducer individualCustomerIdentityProducer = Mockito.mock(IndividualCustomerIdentityProducer.class);
-        individualCustomerManager = new IndividualCustomerManager(modelMapperService,individualCustomerRepository,individualCustomerBusinessRules,individualCustomerProducer,individualCustomerIdentityProducer);
+        individualCustomerManager = new IndividualCustomerManager(modelMapperService,individualCustomerRepository,individualCustomerBusinessRules,individualCustomerProducer,individualCustomerIdentityProducer, mernisService);
     }
 
     @Test
