@@ -1,9 +1,6 @@
 package com.turkcell.crm.orderService.business.dtos.requests;
 
 
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

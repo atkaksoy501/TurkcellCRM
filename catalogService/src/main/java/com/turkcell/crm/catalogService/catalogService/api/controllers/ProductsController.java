@@ -49,4 +49,11 @@ public class ProductsController {
     public UpdatedProductResponse update(@Valid @RequestBody UpdateProductRequest updateProductRequest) {
         return productService.update(updateProductRequest);
     }
+
+    @GetMapping("/isExist/{id}")
+    @CrossOrigin
+    @ResponseStatus(HttpStatus.OK)
+    public boolean isExist(@PathVariable int id) {
+        return productService.isExist(id);
+    }
 }

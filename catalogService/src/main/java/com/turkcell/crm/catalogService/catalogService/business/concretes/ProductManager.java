@@ -62,4 +62,9 @@ public class ProductManager implements ProductService {
         productRepository.save(product);
     }
 
+    @Override
+    public boolean isExist(int id) {
+        return productRepository.existsById(id);
+    }
+
 }

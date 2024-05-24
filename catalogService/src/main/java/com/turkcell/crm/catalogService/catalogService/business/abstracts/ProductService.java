@@ -18,4 +18,5 @@ public interface ProductService {
     GetProductByIdResponse getById(int id);
     UpdatedProductResponse update(UpdateProductRequest updateProductRequest);
     void delete(int id);
+    boolean isExist(int id);
 }

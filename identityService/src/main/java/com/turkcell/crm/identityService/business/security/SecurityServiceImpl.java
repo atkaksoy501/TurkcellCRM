@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class SecurityServiceImpl implements SecurityService {
 
     private static final String[] WHITE_LIST_URLS = {
+            "/api/v1/auth/login"
 
     };
     @Override

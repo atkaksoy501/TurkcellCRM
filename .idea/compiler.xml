@@ -16,6 +16,7 @@
         <module name="gatewayService" />
         <module name="searchService" />
         <module name="accountService" />
+        <module name="cartService" />
         <module name="orderService" />
         <module name="discoveryServer" />
       </profile>
@@ -24,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="accountService" options="-parameters" />
+      <module name="cartService" options="-parameters" />
       <module name="catalogService" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="configServer" options="-parameters" />
