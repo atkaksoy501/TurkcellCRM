@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/atkaksoy501/turkcell-crm-config-server.git
+          uri: https://github.com/mxrtcansaglam/turkcell-crm-config-server-main.git
 server:
   port: 8050
 
