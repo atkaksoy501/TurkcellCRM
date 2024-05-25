@@ -34,6 +34,4 @@ public class IndividualCustomerBusinessRules {
             throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.CITIZEN_NOT_FOUND));
         }
     }
-
-
 }
