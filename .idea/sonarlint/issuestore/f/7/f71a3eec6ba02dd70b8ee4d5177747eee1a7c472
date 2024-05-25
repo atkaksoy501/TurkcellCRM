@@ -1,0 +1,10 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(·§ÕúÿÿÿÿJ$bda7bdb6-4b37-4774-9179-97cd8797c0e6
+ƒ	java:S125 "<This block of commented-out lines of code should be removed.(„ºùÜÿÿÿÿÿ8Â¥ºşú1J$c674cf6e-b94a-4a83-ab10-b81de29a66c6
+ƒ	java:S125""<This block of commented-out lines of code should be removed.(ÎŸĞÀüÿÿÿÿ8Â¥ºşú1J$dd19a8c3-d28f-4e81-8aaa-3d9f434f0bf6
+~
+java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ8©Ò¼şú1J$3551684b-ce62-40da-b769-6bb499c66189
+€
+java:S1128"8Remove this unused import 'reactor.core.publisher.Mono'.(²îöØÿÿÿÿÿ8Â¥ºşú1J$76252600-ba7b-4786-bc7d-0c7af9860f17
+p
+java:S1068"-Remove this unused "webClient" private field.(àî²Ú8ªÒ¼şú1J$98c521ab-91fc-4e3b-bb4a-8263223e1572

@@ -27,10 +27,9 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.turkcell.crm</groupId>
-			<artifactId>identityService</artifactId> <!-- todo: tartışılmalı. direkt bağımlılık olmamalı. -->
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
+			<groupId>io.github.mhmmedinan</groupId>
+			<artifactId>core</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

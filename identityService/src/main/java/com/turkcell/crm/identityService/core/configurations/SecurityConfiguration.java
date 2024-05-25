@@ -1,6 +1,7 @@
 package com.turkcell.crm.identityService.core.configurations;
 
-import com.turkcell.crm.identityService.core.filters.JwtAuthFilter;
+import com.turkcell.crm.core.config.BaseSecurityService;
+import com.turkcell.crm.core.filters.JwtAuthFilter;
 import com.turkcell.crm.identityService.core.services.SecurityService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -21,14 +22,16 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfiguration {
     private final UserDetailsService userService;
     private final PasswordEncoder passwordEncoder;
-    private final JwtAuthFilter jwtAuthFilter;
     private final SecurityService securityService;
+    private final BaseSecurityService baseSecurityService;
+    private final JwtAuthFilter jwtAuthFilter;
 
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        baseSecurityService.configureCoreSecurity(http);
         http.csrf(AbstractHttpConfigurer::disable);
-        securityService.configureSecurity(http);
+//        securityService.configureSecurity(http);
         http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
@@ -42,10 +45,4 @@ public class SecurityConfiguration {
         return authenticationProvider;
     }
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration)
-            throws Exception
-    {
-        return configuration.getAuthenticationManager();
-    }
 }

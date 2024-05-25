@@ -20,7 +20,6 @@ public class UpdateIndividualCustomerRequest {
     @NotNull
     private int id;
 
-    @NotEmpty(message = "First Name is required.")
     @Size(min = 2, max = 50)
     @Pattern(regexp = "^[A-Za-z0-9]*$")
     private String firstName;
@@ -29,16 +28,13 @@ public class UpdateIndividualCustomerRequest {
     @Pattern(regexp = "^[A-Za-z0-9]*$")
     private String middleName;
 
-    @NotEmpty
     @Size(min = 2, max = 50)
     @Pattern(regexp = "^[A-Za-z0-9]+$")
     private String lastName;
 
-    @NotEmpty
     @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/\\d{4}$")
     private LocalDate birthDate;
 
-    @NotEmpty
     @Pattern(regexp = "^(Male|Female)$")
     private Gender gender;
 

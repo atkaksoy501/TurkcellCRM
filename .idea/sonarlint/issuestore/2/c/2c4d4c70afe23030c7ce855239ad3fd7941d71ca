@@ -1,2 +1,4 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Î²™ôJ$68e7d2db-8b6d-4ea3-8848-a26765e1fd42
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Î²™ôJ$f59494b4-60c8-41e4-94f7-fea4614ee7af
+F
+java:S1068"*Remove this unused "LOGGER" private field.(¸Èâ8äÿË÷ú1

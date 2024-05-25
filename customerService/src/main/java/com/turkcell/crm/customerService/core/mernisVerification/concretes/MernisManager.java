@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 import java.time.LocalDate;
 
 @Service
-@AllArgsConstructor
 public class MernisManager implements MernisService {
 
     private final WebClient webClient;
@@ -18,6 +17,7 @@ public class MernisManager implements MernisService {
     public MernisManager(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder.baseUrl("https://mernis.gov.tr/").build();
     }
+
     @Override
     public boolean validateCitizen(String nationalityNumber, String firstName, String lastName, LocalDate birthDate) {
       //  Mono<Boolean> response = webClient.get()

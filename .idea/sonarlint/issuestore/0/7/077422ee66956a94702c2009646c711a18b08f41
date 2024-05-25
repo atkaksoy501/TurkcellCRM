@@ -1,0 +1,6 @@
+
+”	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëºðmJ$c5739879-e22a-4710-999f-2fade6a03b4e
+¥
+java:S1128"]Remove this unused import 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder'.(åÅÚ…ûÿÿÿÿ8ô›ñþú1J$74d23e6f-2885-4489-9894-314bf9cbae02
+¡
+java:S1128"YRemove this unused import 'org.springframework.security.crypto.password.PasswordEncoder'.(‰¡ßáÿÿÿÿÿ8õ›ñþú1J$944f9a79-fb16-4627-bb7a-26e2296e46e7

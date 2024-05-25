@@ -1,5 +1,13 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ú¤»¥J$cbe509be-7760-4cbd-8a0f-9e0653fc3522
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ú¤»¥J$911ca5e1-3f8b-491a-8c58-a94071096072
+
+java:S6353#"<Use concise character class syntax '\\d' instead of '[0-9]'.(—ø²á8³È¤øú1J$5c7e4887-d73f-4763-9228-5b2fe8d714cd
+
+java:S63536"<Use concise character class syntax '\\d' instead of '[0-9]'.(éòæà8·È¤øú1J$43c66529-71ab-4bcf-a4f6-03b3e9993069
+~	java:S125;"<This block of commented-out lines of code should be removed.(€†‘É8…ÆÓ›ö1J$1a3fb8a6-745f-4d60-a84d-c3d483ff28ea
 „
-java:S6353-"<Use concise character class syntax '\\d' instead of '[0-9]'.(õÂ¯‚üÿÿÿÿ8Æ¾êÂ÷1J$4e512782-8997-4ef3-9c6f-dc90ccde940b
-~	java:S1252"<This block of commented-out lines of code should be removed.(€†‘É8…ÆÓ›ö1J$3ecfc23b-2c23-4a3f-9814-3b81d41665cd
+java:S6353>"<Use concise character class syntax '\\d' instead of '[0-9]'.(¨¹õúÿÿÿÿ8ÍÈ¤øú1J$88dcbf90-190b-4f02-91c1-5b6f335a3cbc
+„
+java:S6353B"<Use concise character class syntax '\\d' instead of '[0-9]'.(¨¹õúÿÿÿÿ8ÎÈ¤øú1J$065185c0-81cd-4c13-a0af-a310fee0b303
+a
+java:S1128"DRemove this unused import 'jakarta.validation.constraints.NotEmpty'.(µÇî±8Û±©øú1

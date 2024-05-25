@@ -1,9 +1,6 @@
 package com.turkcell.crm.customerService.business.dtos.requests.Customer;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,36 +11,36 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Data
 public class CreateIndividualCustomerRequest {
-    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String firstName;
 
     @Email
-    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String email;
 
     @Size(min = 2, max = 30)
     private String middleName;
 
-    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String lastName;
 
-//    @NotNull
+    @NotEmpty
     private LocalDate birthDate;
 
 //    private Gender gender; //todo: enum tablosu olacak
 
-//    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String fatherName;
 
-//    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String motherName;
 
-//    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String motherMaidenName;
 
@@ -53,15 +50,15 @@ public class CreateIndividualCustomerRequest {
 
 //    private List<Integer> address_ids; //todo: address tablosu ile bağlantısı sağlanacak manager tarafında
 
-//    @NotNull
+    @NotEmpty
     @Size(min = 11, max = 11)
     private String mobilePhoneNumber;
 
-//    @NotNull
+    @NotEmpty
     @Size(min = 11, max = 11)
     private String homePhoneNumber;
 
-//    @NotNull
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String password;
 }

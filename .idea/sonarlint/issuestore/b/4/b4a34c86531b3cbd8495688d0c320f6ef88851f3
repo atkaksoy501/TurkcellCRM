@@ -1,0 +1,34 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ù³×ûJ$0d29c765-1cbf-445e-88c3-2ce7c4cada86
+	java:S116"URename this field "SECRET_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷õ»J$6b3ad376-e77e-4257-b97d-4d5d1a4877d6
+•	java:S116"URename this field "EXPIRATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¥á‰üÿÿÿÿJ$44351156-aa46-449f-9bd6-bcd69a183d3c
+q
+java:S1874$"5Remove this use of "setSigningKey"; it is deprecated.(ĞöıäJ$7353a2f6-b3c1-47e6-9919-ae609aeef957
+r
+java:S1874$"6Remove this use of "parseClaimsJws"; it is deprecated.(ĞöıäJ$e98a9fcc-1789-492c-aa89-29ff0b341521
+q
+java:S1874."5Remove this use of "setSigningKey"; it is deprecated.(Ô™ğ‡J$5fee66c4-eef5-4d27-9bea-74cc950ce154
+w
+java:S18740"6Remove this use of "parseClaimsJws"; it is deprecated.(ëÙ–ºıÿÿÿÿJ$073c3df8-4d1a-4945-8e2e-746ef9118850
+k
+java:S18741"/Remove this use of "getBody"; it is deprecated.(ÊÄ¿ÌJ$75b78db4-dc20-4481-b4bc-395f7d0376c9
+q
+java:S18748"5Remove this use of "setSigningKey"; it is deprecated.(Ô™ğ‡J$010ca166-d45f-48ae-a74f-75aa5f8538ad
+w
+java:S1874:"6Remove this use of "parseClaimsJws"; it is deprecated.(ëÙ–ºıÿÿÿÿJ$a418513a-1c41-4501-9330-7a3e1a67b744
+k
+java:S1874;"/Remove this use of "getBody"; it is deprecated.(ÊÄ¿ÌJ$92c8f6d3-cead-42f9-8818-136bf91e3c1d
+r
+java:S1874A"1Remove this use of "setClaims"; it is deprecated.(æõíûúÿÿÿÿJ$bd176bad-6b2a-4ca3-a023-f2f834044efe
+m
+java:S1874B"2Remove this use of "setSubject"; it is deprecated.(ï³ĞvJ$d25d5072-bf51-4dc1-ba41-7859cfa23bfc
+o
+java:S1874C"3Remove this use of "setIssuedAt"; it is deprecated.(øÔ÷òJ$97e20e23-95c3-486c-93e2-b6839e1ffe19
+q
+java:S1874D"5Remove this use of "setExpiration"; it is deprecated.(–æƒ»J$6ea4d76c-376d-449d-876b-e5a6e98ab8fc
+k
+java:S1874E"0Remove this use of "signWith"; it is deprecated.(ñ¥SJ$2075f1ef-ddfd-4e8f-a421-68c9de8b9ef0
+u
+java:S1874E":Remove this use of "SignatureAlgorithm"; it is deprecated.(ñ¥SJ$f64be1cb-7c50-4162-bb53-6ed74ae806cd
+u
+java:S1874E":Remove this use of "SignatureAlgorithm"; it is deprecated.(ñ¥SJ$dc5d7532-8fb6-400c-a7e9-a05fe49cdffa
