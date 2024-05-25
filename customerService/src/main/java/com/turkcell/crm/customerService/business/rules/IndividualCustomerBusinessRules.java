@@ -28,8 +28,8 @@ public class IndividualCustomerBusinessRules {
             throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.CUSTOMER_NOT_FOUND));
         }
     }
-    public void validateCitizen(String nationalityId, String firstName, String lastName, LocalDate birthDate) {
-        boolean isValid = mernisService.validateCitizen(nationalityId, firstName, lastName, birthDate);
+    public void validateCitizen(String nationalityNumber, String firstName, String lastName, LocalDate birthDate) {
+        boolean isValid = mernisService.validateCitizen(nationalityNumber, firstName, lastName, birthDate);
         if (!isValid) {
             throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.CITIZEN_NOT_FOUND));
         }
