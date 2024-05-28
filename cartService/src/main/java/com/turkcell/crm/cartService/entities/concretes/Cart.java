@@ -1,29 +1,24 @@
 package com.turkcell.crm.cartService.entities.concretes;
 
 import com.turkcell.crm.cartService.core.entities.BaseEntity;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
-@NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@Entity
-@Table(name = "carts")
-public class Cart extends BaseEntity<Integer> {
-    @Column(name = "account_id")
-    private int accountId;
+@Data
+public class Cart extends BaseEntity<String> {
+    private String accountId;
 
-    @ElementCollection
-    @CollectionTable(name = "product_ids")
-    @Column(name = "products")
-    private Map<Integer, Integer> products; //<productId, quantity>
+    private List<CartItem> items;
 
-    @Column(name = "total_price")
     private double totalPrice;
+
+    public Cart() {
+        setId(UUID.randomUUID().toString());
+        this.items = new ArrayList<>();
+    }
+
 }

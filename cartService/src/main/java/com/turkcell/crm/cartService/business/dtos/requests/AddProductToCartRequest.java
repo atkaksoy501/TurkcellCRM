@@ -4,14 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Map;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UpdateCartRequest {
-    private int id;
+public class AddProductToCartRequest {
     private String accountId;
-    private Map<Integer, Integer> products; //<productId, quantity>
-    private double totalPrice;
+    private int productId;
+    private int quantity;
+    private double price;
 }

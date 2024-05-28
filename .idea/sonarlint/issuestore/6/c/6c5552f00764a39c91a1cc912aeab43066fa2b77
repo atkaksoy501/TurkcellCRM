@@ -1,10 +1,16 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†Ùóÿÿÿÿÿ8±‹åàú1J$acc8eb06-3673-4a08-90f3-ebf48900db07
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†Ùóÿÿÿÿÿ8 ²Ñü1J$380282f7-4d16-425b-9220-e3d123422e96
 É
-java:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õş–—ûÿÿÿÿ8³‹åàú1J$e4f1f1a9-d9e7-4545-8e51-26db0230672d
+java:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õş–—ûÿÿÿÿ8¡¸×ü1J$349db903-0ce8-4efd-9da6-05a54edcb489
 Ä
-java:S1186'"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(½± ¶8³‹åàú1J$d6eaac73-7bad-4079-86ac-a669b3b67fcd
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(½± ¶8¢¸×ü1J$4b1ce7ef-3e0a-40f1-bca5-a7e024963eb9
 Ä
-java:S11862"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×²Ø®8µ‹åàú1J$008948f3-4ccb-4726-8dbe-faa6b87776c2
-H
-java:S1168B"+Return an empty collection instead of null.(¥¹ï8ˆ·æáú1
+java:S1186A"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×²Ø®8¢¸×ü1J$26ed04d1-2170-4af4-9724-860fda1aa6d4
+~
+java:S1854";Remove this useless assignment to local variable "product".(‘µ 8±€–‚ü1J$cbec4ee8-edcd-4298-935c-83840af84c3a
+o
+java:S1481",Remove this unused "product" local variable.(‘µ 8±€–‚ü1J$f3effa61-57d4-4615-a076-ad3c3f9ae799
+u
+java:S1135"2Complete the task associated to this TODO comment.(‘µ 8Ç—½‚ü1J$26579651-0b4d-4fc9-a640-37beb46613bc
+n
+java:S1168Q"+Return an empty collection instead of null.(¥¹ï8§¸×ü1J$97493da4-f88a-4014-a572-ee7e457efb4c

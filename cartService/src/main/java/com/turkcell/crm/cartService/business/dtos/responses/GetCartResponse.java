@@ -10,7 +10,7 @@ import java.util.Map;
 @NoArgsConstructor
 @Data
 public class GetCartResponse {
-    private int accountId;
+    private String accountId;
     private Map<Integer, Integer> products; //<productId, quantity>
     private double totalPrice;
 }

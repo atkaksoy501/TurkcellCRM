@@ -1,6 +1,7 @@
 package com.turkcell.crm.cartService.api.controllers;
 
 import com.turkcell.crm.cartService.business.abstracts.CartService;
+import com.turkcell.crm.cartService.business.dtos.requests.AddProductToCartRequest;
 import com.turkcell.crm.cartService.business.dtos.requests.CreateCartRequest;
 import com.turkcell.crm.cartService.business.dtos.requests.UpdateCartRequest;
 import com.turkcell.crm.cartService.business.dtos.responses.CreatedCartResponse;
@@ -49,11 +50,10 @@ public class CartsController {
         return cartService.getAllCarts();
     }
 
-    @PostMapping("/addproduct/{productId}/{cartId}")
-    @CrossOrigin
+    @PostMapping("/addproduct")
     @ResponseStatus(HttpStatus.OK)
-    public void addProductToCart(@PathVariable int productId, @PathVariable int cartId) {
-        cartService.addProductToCart(productId, cartId);
+    public void addProductToCart(AddProductToCartRequest addProductToCartRequest) {
+        cartService.addProductToCart(addProductToCartRequest);
     }
 
     @DeleteMapping("/removeproduct/{productId}/{cartId}")

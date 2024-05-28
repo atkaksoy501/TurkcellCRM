@@ -479,8 +479,6 @@ VorderService/src/main/java/com/turkcell/crm/orderService/core/entities/BaseEnti
 csearchService/src/main/java/com/turkcell/crm/searchService/api/controllers/CustomersController.java,6\a\6a85b3a8e123244dd594ba815b8469dda9455b21
 ó
 gsearchService/src/main/java/com/turkcell/crm/searchService/dataAccess/abstracts/CustomerRepository.java,4\0\40201ded7da386ed39bfeb72e495a6c8e3dca6f7
-å
-\identityService/src/main/java/com/turkcell/crm/identityService/core/services/JwtService.java,b\4\b4a34c86531b3cbd8495688d0c320f6ef88851f3
 í
 bidentityService/src/main/java/com/turkcell/crm/identityService/api/controllers/AuthController.java,6\d\6ddd9710ade75ca1116f987f4f5c1c62573e22f4
 £
@@ -499,8 +497,6 @@ jcustomerService/src/main/java/com/turkcell/crm/customerService/core/business/co
 dsearchService/src/main/java/com/turkcell/crm/searchService/business/rules/CustomerBusinessRules.java,5\b\5b9f06692d3e84dece69002d639789a9e1efb1c9
 ú
 lcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/entities/concretes/Property.java,4\a\4afe2deef961b45a66218e22e590adfd8f3494fc
-é
-^identityService/src/main/java/com/turkcell/crm/identityService/core/filters/JwtAuthFilter.java,0\b\0be77ff1702134f60603cc37f273c4ba27f634d1
 †
 pidentityService/src/main/java/com/turkcell/crm/identityService/core/configurations/ApplicationConfiguration.java,0\7\077422ee66956a94702c2009646c711a18b08f41
 ù
@@ -521,8 +517,6 @@ D
 `cartService/src/main/java/com/turkcell/crm/cartService/core/configuration/ApplicationConfig.java,a\d\adcb2f4e303fa6d11c50d611fae6f1b2aad9fafd
 É
 ScartService/src/main/java/com/turkcell/crm/cartService/entities/concretes/Cart.java,f\b\fb1ad1d02585716a2ad0eeb7f79591d74b6affc4
-Ö
-UcartService/src/main/java/com/turkcell/crm/cartService/dataAccess/CartRepository.java,3\1\3193eab0aef02b5578847468ed409015c19e65a9
 ä
 ZcartService/src/main/java/com/turkcell/crm/cartService/business/abstracts/CartService.java,1\d\1d21c7c47e7ed4ccc2df5257efc4557bf4609815
 ç
@@ -597,8 +591,6 @@ D
 configServer/pom.xml,b\f\bf00bd139e115f05e042c7494738eabae2eb8cf7
 ï
 ecustomerService/src/main/java/com/turkcell/crm/customerService/core/configuration/SecurityConfig.java,7\8\78c2e9e9670adb7ed164099bc8761db45a0b846a
-â
-Ycommon/src/main/java/com/turkcell/crm/common/configuration/BaseSecurityConfiguration.java,b\f\bf32790f63a7e970a47f3c127799f440b17fadd7
 >
 common/pom.xml,4\8\488bdbea7e8b73c44bd2a54e63f6012f10969196
 H
@@ -683,8 +675,6 @@ Q.idea/sonarlint/securityhotspotstore/2/7/27205db0f79ee46bdc7b872f2abb27dcb80541
 Q.idea/sonarlint/securityhotspotstore/2/b/2b6ee96afb09b98aa4786337a9bcbb33859eaf4e,c\8\c8a42e83a306fd97ab7552b0344e360a09d89dc0
 Å
 Q.idea/sonarlint/securityhotspotstore/f/7/f737eb4f4b7d765a172892903b2ad024f0bac9f0,6\e\6e2ecab757aafcafb8e91ca8a786ad1c97f8e3f2
-Å
-Q.idea/sonarlint/securityhotspotstore/3/1/3193eab0aef02b5578847468ed409015c19e65a9,9\3\938cd5de6997345c63af92a9f3ac6bbf9533f5fe
 Å
 Q.idea/sonarlint/securityhotspotstore/3/1/3100f69a8ce5c9737e69420683ccdf70b575adb0,4\1\41f1d09ce8001506d2a8f21b58b06503d8dcbd23
 Å
@@ -1099,8 +1089,6 @@ w
 G.idea/sonarlint/issuestore/7/2/72480de49de8f0b188ad4010ed623e0fa7e6784a,c\f\cf998f3c20dccf3247af71023c1f646317d1aca2
 w
 G.idea/sonarlint/issuestore/7/2/724bae300888d4b50793dbc8bb28bb7a2f5e91f0,4\8\482c9bfdee58bf10f01df37db29cad35628c9406
-Å
-Q.idea/sonarlint/securityhotspotstore/b/4/b4a34c86531b3cbd8495688d0c320f6ef88851f3,3\d\3df0da5014d8c342c3ae074bcc7a21c8ed2c043e
 w
 G.idea/sonarlint/issuestore/7/a/7a58e9b5e75a5efef84c7118e81005b7dff7e8ba,e\2\e258f536af9f4b73d9c6743a601cf61ea363c0fa
 w
@@ -1187,8 +1175,6 @@ Q.idea/sonarlint/securityhotspotstore/0/7/077422ee66956a94702c2009646c711a18b08f
 Q.idea/sonarlint/securityhotspotstore/c/3/c35261e5f7aa59b7f3c59b66b37193dff6484a0c,4\d\4d9ec8f933b149201fe2e847e2c28e3509994494
 Å
 Q.idea/sonarlint/securityhotspotstore/7/d/7dc30b29867646c0b33343f10a7b62d60ed69b0f,9\c\9c545b70102906e8a08d8a1f0eb1c7484197cf0e
-Å
-Q.idea/sonarlint/securityhotspotstore/0/b/0be77ff1702134f60603cc37f273c4ba27f634d1,2\7\272e2bcebf731891e291bdb7533f8222f76fd04f
 w
 G.idea/sonarlint/issuestore/4/7/478dfd654167f887fcbfa652e01220f677e6a202,e\f\ef22cf53bff10e43132a047a78ee21491b841ac1
 w
@@ -1261,3 +1247,15 @@ w
 G.idea/sonarlint/issuestore/8/1/810c1b0bc8dca9609dea7db5556673793334b97e,6\f\6f0bf528d15fa0ccfb200bbce9b8ad8bf9e2f8de
 w
 G.idea/sonarlint/issuestore/e/f/efa466e571840ec710f01907506a43938b6ca3be,0\1\01725f068839ee24649d778ef3eafccd9e1b543b
+Ü
+VcartService/src/main/java/com/turkcell/crm/cartService/configurations/RedisConfig.java,a\6\a6a5526e5ae19f358d343d56d71e75bf4722e991
+à
+XcartService/src/main/java/com/turkcell/crm/cartService/repositories/RedisRepository.java,f\3\f38fef40f0a64123384bb5d82c56d77419ecb5a6
+á
+WcartService/src/main/java/com/turkcell/crm/cartService/entities/concretes/CartItem.java,5\f\5ff78030f67afec90ba6d06ec862c4ce070792fb
+ö
+jcartService/src/main/java/com/turkcell/crm/cartService/business/dtos/requests/AddProductToCartRequest.java,5\9\5906ef30dc759ad9a9d35d2fa082fc716d7714ab
+∏
+ácatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/business/dtos/responses/product/GetProductByIdResponse.java,0\3\0369e87687886a2c71110e93a256c165347de272
+s
+Ccommon/src/main/java/com/turkcell/crm/common/CommonApplication.java,5\4\543bce38045eb9adda56a124704200471f02a51f

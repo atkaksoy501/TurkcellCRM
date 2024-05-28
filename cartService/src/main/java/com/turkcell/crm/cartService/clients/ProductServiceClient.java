@@ -8,4 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ProductServiceClient {
     @GetMapping("/catalogservice/api/v1/products/isExist/{id}")
     boolean isExist(@PathVariable int id);
+
+    @GetMapping("/catalogservice/api/v1/products/getById/{id}")
+    Object getProductById(@PathVariable int id);
 }
