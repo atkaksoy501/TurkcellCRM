@@ -6,12 +6,12 @@ import com.turkcell.crm.identityService.business.abstracts.UserService;
 import com.turkcell.crm.identityService.business.dtos.requests.LoginRequest;
 import com.turkcell.crm.identityService.business.messages.AuthMessages;
 import com.turkcell.crm.identityService.core.utilities.exceptions.types.BusinessException;
-import com.turkcell.crm.identityService.entities.concretes.User;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,8 +29,8 @@ public class AuthManager implements AuthService {
         if(!authentication.isAuthenticated())
             throw new BusinessException(AuthMessages.LOGIN_FAILED);
 
-        User user = userService.findByUsername(request.getEmail());
+        UserDetails user = userService.loadUserByUsername(request.getEmail());
 
-        return jwtService.generateToken(user.getUsername(), user.getAuthorities() == null ? null : user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
+        return jwtService.generateToken(user.getUsername(), user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
     }
 }

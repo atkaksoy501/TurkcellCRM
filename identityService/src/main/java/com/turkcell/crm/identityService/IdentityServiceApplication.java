@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableSecurity
+@EnableSecurity()
 public class IdentityServiceApplication {
 
 	public static void main(String[] args) {

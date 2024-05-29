@@ -33,7 +33,8 @@ class IndividualCustomerManagerTest {
         ModelMapper mapper = new ModelMapper();
         ModelMapperService modelMapperService = new ModelMapperManager(mapper);
         MessageService messageService = Mockito.mock(MessageManager.class);
-        IndividualCustomerBusinessRules individualCustomerBusinessRules = new IndividualCustomerBusinessRules(individualCustomerRepository, messageService, mernisService);
+        IndividualCustomerBusinessRules individualCustomerBusinessRules =
+                new IndividualCustomerBusinessRules(individualCustomerRepository, messageService, mernisService);
         IndividualCustomerProducer individualCustomerProducer = Mockito.mock(IndividualCustomerProducer.class);
         IndividualCustomerIdentityProducer individualCustomerIdentityProducer = Mockito.mock(IndividualCustomerIdentityProducer.class);
         individualCustomerManager = new IndividualCustomerManager(modelMapperService,individualCustomerRepository,individualCustomerBusinessRules,individualCustomerProducer,individualCustomerIdentityProducer, mernisService);

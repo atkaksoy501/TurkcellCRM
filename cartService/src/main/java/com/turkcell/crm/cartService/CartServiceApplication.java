@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@EnableSecurity
+@EnableSecurity()
 public class CartServiceApplication {
 
 	public static void main(String[] args) {
