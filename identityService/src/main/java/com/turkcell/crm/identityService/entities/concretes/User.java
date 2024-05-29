@@ -31,13 +31,6 @@ public class User extends BaseEntity implements UserDetails {
             inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> authorities;
 
-
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
     @Override
     public String getUsername() {
         return email;

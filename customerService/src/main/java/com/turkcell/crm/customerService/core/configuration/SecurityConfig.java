@@ -21,7 +21,6 @@ public class SecurityConfig {
         baseSecurityService.configureCoreSecurity(http);
         http.authorizeHttpRequests(
                 req -> req
-                        .requestMatchers(HttpMethod.GET).permitAll()
                         .anyRequest().authenticated()
         );
         return http.build();

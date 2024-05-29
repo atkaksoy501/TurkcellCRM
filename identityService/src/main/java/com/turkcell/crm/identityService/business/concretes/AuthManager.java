@@ -31,6 +31,6 @@ public class AuthManager implements AuthService {
 
         UserDetails user = userService.loadUserByUsername(request.getEmail());
 
-        return jwtService.generateToken(user.getUsername(), user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
+        return jwtService.generateToken(user.getUsername(), user.getAuthorities() == null ? null : user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
     }
 }

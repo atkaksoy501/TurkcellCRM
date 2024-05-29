@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Set;
 
@@ -18,7 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Role extends BaseEntity {
+public class Role extends BaseEntity implements GrantedAuthority {
 
     @Column(name="name")
     private String name;
@@ -26,5 +27,9 @@ public class Role extends BaseEntity {
     @ManyToMany(mappedBy = "authorities")
     private Set<User> users;
 
+    @Override
+    public String getAuthority() {
+        return this.name.toLowerCase();
+    }
 
 }
