@@ -10,12 +10,11 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/customerservice/api/v1/individualCustomers")
+@RequestMapping("/api/v1/individualCustomers")
 public class IndividualCustomersController {
     private final IndividualCustomerService individualCustomerService;
 

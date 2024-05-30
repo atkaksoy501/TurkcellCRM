@@ -13,14 +13,17 @@
         <module name="common" />
         <module name="customerService" />
         <module name="configServer" />
-        <module name="gatewayService" />
         <module name="searchService" />
         <module name="accountService" />
         <module name="cartService" />
+        <module name="gatewayService" />
         <module name="orderService" />
         <module name="discoveryServer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gatewayServer" target="19" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -31,6 +34,7 @@
       <module name="configServer" options="-parameters" />
       <module name="customerService" options="-parameters" />
       <module name="discoveryServer" options="-parameters" />
+      <module name="gatewayServer" options="-parameters" />
       <module name="gatewayService" options="-parameters" />
       <module name="identityService" options="-parameters" />
       <module name="invoiceService" options="-parameters" />

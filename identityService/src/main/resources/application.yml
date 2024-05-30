@@ -1,6 +1,6 @@
 spring:
   application:
-    name: identityService
+    name: identityservice
   config:
     import: configserver:http://localhost:8050/
   cloud:
