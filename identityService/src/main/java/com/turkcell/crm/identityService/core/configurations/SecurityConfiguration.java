@@ -15,11 +15,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @AllArgsConstructor
 public class SecurityConfiguration {
-    private final UserDetailsService userService;
-    private final PasswordEncoder passwordEncoder;
-    private final BaseSecurityService baseSecurityService;
-    private final JwtAuthFilter jwtAuthFilter;
 
+    private final BaseSecurityService baseSecurityService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -32,15 +29,8 @@ public class SecurityConfiguration {
         return http.build();
     }
 
-    /*@Bean
-    public AuthenticationProvider authenticationProvider()
-    {
-       DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(userService);
-        authenticationProvider.setPasswordEncoder(passwordEncoder);
-        return authenticationProvider;
-    }
-     */
+
+
     //TODO incelenecek buralar
 
 

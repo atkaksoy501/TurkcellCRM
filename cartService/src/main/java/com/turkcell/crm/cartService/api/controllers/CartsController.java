@@ -11,7 +11,6 @@ import com.turkcell.crm.cartService.business.dtos.responses.UpdatedCartResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -52,7 +51,7 @@ public class CartsController {
 
     @PostMapping("/addproduct")
     @ResponseStatus(HttpStatus.OK)
-    public void addProductToCart(AddProductToCartRequest addProductToCartRequest) {
+    public void addProductToCart(@RequestBody AddProductToCartRequest addProductToCartRequest) {
         cartService.addProductToCart(addProductToCartRequest);
     }
 

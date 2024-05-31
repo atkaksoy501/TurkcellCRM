@@ -27,7 +27,9 @@ public class CartManager implements CartService {
 
     @Override
     public void addProductToCart(AddProductToCartRequest addProductToCartRequest) {
-        productServiceClient.isExist(1);
+       boolean a =  productServiceClient.isExist(1);
+       String s = "caner";
+
         /*Object product = productServiceClient.getProductById(addProductToCartRequest.getProductId()); //todo: denenecek security sorunları var.
         Cart cart = redisRepository.getCartByAccountId(addProductToCartRequest.getAccountId());
         if (cart == null) {
