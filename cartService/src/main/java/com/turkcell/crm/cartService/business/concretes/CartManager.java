@@ -15,7 +15,6 @@ import com.turkcell.crm.cartService.entities.concretes.CartItem;
 import com.turkcell.crm.cartService.repositories.RedisRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 

@@ -11,5 +11,5 @@ public class AddProductToCartRequest {
     private String accountId;
     private int productId;
     private int quantity;
-    private double price;
+    private double price; //todo gereksiz bu
 }

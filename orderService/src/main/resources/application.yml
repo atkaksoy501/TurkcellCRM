@@ -1,6 +1,6 @@
 spring:
   application:
-    name: orderService
+    name: orderservice
   config:
     import: configserver:http://localhost:8050/
   cloud:
