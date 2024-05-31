@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/catalogservice/api/v1/products")
+@RequestMapping("/api/v1/products")
 public class ProductsController {
     private final ProductService productService;
 
@@ -51,7 +51,6 @@ public class ProductsController {
     }
 
     @GetMapping("/isExist/{id}")
-    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     public boolean isExist(@PathVariable int id) {
         return productService.isExist(id);
