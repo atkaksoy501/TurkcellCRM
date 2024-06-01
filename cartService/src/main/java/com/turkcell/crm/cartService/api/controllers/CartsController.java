@@ -8,10 +8,12 @@ import com.turkcell.crm.cartService.business.dtos.responses.CreatedCartResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.GetAllCartsResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.GetCartResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.UpdatedCartResponse;
+import com.turkcell.crm.cartService.entities.concretes.Cart;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor
@@ -65,6 +67,18 @@ public class CartsController {
     @ResponseStatus(HttpStatus.OK)
     public void clearCart(int cartId) {
         cartService.clearCart(cartId);
+    }
+
+    @GetMapping("/getByAccountId/{accountId}")
+    @ResponseStatus(HttpStatus.OK)
+    public GetCartResponse getByAccountId(@PathVariable String accountId) {
+        return cartService.getCartByAccountId(accountId);
+    }
+
+    @GetMapping("/getAllItems")
+    @ResponseStatus(HttpStatus.OK)
+    public Map<String, Cart> getAllItems() {
+        return cartService.getAllItems();
     }
 
 

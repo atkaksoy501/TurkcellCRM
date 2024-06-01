@@ -17,6 +17,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @AllArgsConstructor
 @Service
@@ -27,10 +28,9 @@ public class CartManager implements CartService {
 
     @Override
     public void addProductToCart(AddProductToCartRequest addProductToCartRequest) {
-       boolean a =  productServiceClient.isExist(1);
-       String s = "caner";
+       boolean isProductExist = productServiceClient.isProductExist(addProductToCartRequest.getProductId());
+        Object product = productServiceClient.getById(addProductToCartRequest.getProductId());
 
-        /*Object product = productServiceClient.getProductById(addProductToCartRequest.getProductId()); //todo: denenecek security sorunları var.
         Cart cart = redisRepository.getCartByAccountId(addProductToCartRequest.getAccountId());
         if (cart == null) {
             cart = new Cart();
@@ -38,15 +38,10 @@ public class CartManager implements CartService {
         cart.setAccountId(addProductToCartRequest.getAccountId());
         CartItem cartItem = new CartItem();
         cartItem.setProductId(addProductToCartRequest.getProductId());
-        cartItem.setQuantity(addProductToCartRequest.getQuantity());
-        cartItem.setPrice(addProductToCartRequest.getPrice());
-        cartItem.setActive(true);
-        cartItem.setCreatedDate(LocalDateTime.now());
-        cart.setTotalPrice(cart.getTotalPrice() + (cartItem.getPrice() * cartItem.getQuantity()));
+        cartItem.setPrice();
+        cart.setTotalPrice(cart.getTotalPrice() + cartItem.getPrice());
         cart.getItems().add(cartItem);
         redisRepository.addItem(cart);
-
-         */
     }
 
     @Override
@@ -83,5 +78,17 @@ public class CartManager implements CartService {
     @Override
     public List<GetAllCartsResponse> getAllCarts() {
         return null;
+    }
+
+    @Override
+    public GetCartResponse getCartByAccountId(String accountId) {
+        Cart cart = redisRepository.getCartByAccountId(accountId);
+        GetCartResponse getCartResponse = modelMapperService.forResponse().map(cart, GetCartResponse.class);
+        return getCartResponse;
+    }
+
+    @Override
+    public Map<String,Cart> getAllItems(){
+        return this.redisRepository.getAllItems();
     }
 }

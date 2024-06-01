@@ -55,4 +55,10 @@ public class ProductsController {
     public boolean isExist(@PathVariable int id) {
         return productService.isExist(id);
     }
+
+    @GetMapping("/getPriceById/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public double getPriceById(@PathVariable int id) {
+        return productService.getPriceById(id);
+    }
 }

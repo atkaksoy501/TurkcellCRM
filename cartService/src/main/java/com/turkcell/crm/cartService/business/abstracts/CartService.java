@@ -7,8 +7,10 @@ import com.turkcell.crm.cartService.business.dtos.responses.CreatedCartResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.GetAllCartsResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.GetCartResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.UpdatedCartResponse;
+import com.turkcell.crm.cartService.entities.concretes.Cart;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CartService {
     void addProductToCart(AddProductToCartRequest addProductToCartRequest);
@@ -19,4 +21,6 @@ public interface CartService {
     UpdatedCartResponse updateCart(UpdateCartRequest updateCartRequest);
     GetCartResponse getCart(int cartId);
     List<GetAllCartsResponse> getAllCarts();
+    GetCartResponse getCartByAccountId(String accountId);
+    Map<String, Cart> getAllItems();
 }

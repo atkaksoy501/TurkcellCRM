@@ -503,8 +503,6 @@ pidentityService/src/main/java/com/turkcell/crm/identityService/core/configurati
 midentityService/src/main/java/com/turkcell/crm/identityService/core/configurations/SecurityConfiguration.java,7\d\7dc30b29867646c0b33343f10a7b62d60ed69b0f
 ë
 aidentityService/src/main/java/com/turkcell/crm/identityService/core/services/SecurityService.java,c\3\c35261e5f7aa59b7f3c59b66b37193dff6484a0c
-ô
-iidentityService/src/main/java/com/turkcell/crm/identityService/business/security/SecurityServiceImpl.java,d\7\d743af9eea54e748f9eeef52d611e4025ff1bb6a
 ó
 gorderService/src/main/java/com/turkcell/crm/orderService/business/dtos/requests/CreateOrderRequest.java,a\a\aaf2df31138e11f86c853cf810b3ee38193c944c
 Ç
@@ -1168,8 +1166,6 @@ G.idea/sonarlint/issuestore/a/a/aac5d39b094bbd1b5c6ba7d74f713f36743101ab,a\2\a2
 w
 G.idea/sonarlint/issuestore/a/d/ad85f69eedf8c6502629413e83a297d10e679ba5,a\4\a4dd13e56f6d681c40878db0f5f11975352cedf5
 Å
-Q.idea/sonarlint/securityhotspotstore/d/7/d743af9eea54e748f9eeef52d611e4025ff1bb6a,a\8\a8fef48860e4b5c0d2e445b5f242e95aef2d690b
-Å
 Q.idea/sonarlint/securityhotspotstore/0/7/077422ee66956a94702c2009646c711a18b08f41,d\2\d26f32b50717a3586d7fd5654b35d92a8c32a0e6
 Å
 Q.idea/sonarlint/securityhotspotstore/c/3/c35261e5f7aa59b7f3c59b66b37193dff6484a0c,4\d\4d9ec8f933b149201fe2e847e2c28e3509994494
@@ -1259,3 +1255,17 @@ jcartService/src/main/java/com/turkcell/crm/cartService/business/dtos/requests/A
 ácatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/business/dtos/responses/product/GetProductByIdResponse.java,0\3\0369e87687886a2c71110e93a256c165347de272
 s
 Ccommon/src/main/java/com/turkcell/crm/common/CommonApplication.java,5\4\543bce38045eb9adda56a124704200471f02a51f
+ç
+]cartService/src/main/java/com/turkcell/crm/cartService/core/configuration/SecurityConfig.java,0\3\03bec1db4e0c066bd4d2a6ec746773696f63dd53
+å
+\common/src/main/java/com/turkcell/crm/common/core/config/feign/FeignClientConfiguration.java,0\9\09a68ddf91962c9c240a09649f7413ac28efb6d1
+ä
+Zcommon/src/main/java/com/turkcell/crm/common/core/config/feign/FeignClientInterceptor.java,9\b\9b7ae1fb60b4939719286d82303fb5be9c81a890
+ü
+oidentityService/src/main/java/com/turkcell/crm/identityService/business/dtos/requests/CustomerCreatedEvent.java,3\7\37ad87c603fd7c2f64a5dbc33064226db6eab499
+í
+bidentityService/src/main/java/com/turkcell/crm/identityService/business/messages/AuthMessages.java,9\1\91e576857bf92484d98fac0f3e5aceb4b624baaa
+¢
+rcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/core/configuration/SecurityConfig.java,1\3\139577bdc28e2c64ac7e5f5b3f99920a5dd765ca
+µ
+ÑcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/business/dtos/requests/product/CreateProductRequest.java,2\f\2fc550a6db6a86a0c121f7706eaebe19ed9de3b7

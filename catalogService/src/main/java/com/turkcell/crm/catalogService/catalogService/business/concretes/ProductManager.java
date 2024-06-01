@@ -67,4 +67,10 @@ public class ProductManager implements ProductService {
         return productRepository.existsById(id);
     }
 
+    @Override
+    public double getPriceById(int id) {
+        Product product = productRepository.findById(id).orElse(null);
+        return product.getPrice();
+    }
+
 }

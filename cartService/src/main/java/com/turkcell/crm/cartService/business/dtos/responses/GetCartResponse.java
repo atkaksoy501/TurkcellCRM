@@ -1,9 +1,11 @@
 package com.turkcell.crm.cartService.business.dtos.responses;
 
+import com.turkcell.crm.cartService.entities.concretes.CartItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
@@ -11,6 +13,6 @@ import java.util.Map;
 @Data
 public class GetCartResponse {
     private String accountId;
-    private Map<Integer, Integer> products; //<productId, quantity>
+    private List<CartItem> items;
     private double totalPrice;
 }
