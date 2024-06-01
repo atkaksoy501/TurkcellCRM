@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "localhost:9002",configuration = FeignClientConfiguration.class)
 public interface ProductServiceClient {
-    @GetMapping("/api/v1/products/isExist/{id}")
+    @GetMapping("/productservice/api/v1/products/isExist/{id}")
     boolean isExist(@PathVariable int id);
 
 }
