@@ -2,15 +2,14 @@ package com.turkcell.crm.customerService.entities.concretes;
 
 import com.turkcell.crm.customerService.entities.concretes.enums.Gender;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "individual_customers")
 public class IndividualCustomer extends Customer {

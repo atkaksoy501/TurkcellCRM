@@ -24,6 +24,10 @@ public class CreateAddressRequest {
     private String street;
 
     @NotEmpty
+    @Size(min=2,max=30)
+    private String doorNumber;
+
+    @NotEmpty
     @Size(min = 2, max = 100)
     private String addressDetail;
 

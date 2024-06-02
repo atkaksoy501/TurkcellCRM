@@ -1,6 +1,7 @@
 package com.turkcell.crm.customerService.business.dtos.requests.Address;
 
 import com.turkcell.crm.customerService.entities.concretes.enums.AddressType;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,10 @@ public class UpdateAddressRequest {
 
     @Size(min = 2, max = 30)
     private String street;
+
+    @NotEmpty
+    @Size(min=2,max=30)
+    private String doorNumber;
 
     @Size(min = 2, max = 100)
     private String addressDetail;
