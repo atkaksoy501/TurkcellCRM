@@ -16,11 +16,12 @@ import java.util.List;
 @Table(name = "customers")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @SequenceGenerator(
-        name = "base_sequence_generator", //generator name
-        sequenceName = "customer_sequence", //this entity's sequence name
-        allocationSize = 1 //increment size
+        name = "base_sequence_generator",
+        sequenceName = "customer_sequence",
+        allocationSize = 1
 )
 public class Customer extends BaseEntity<Integer> {
+
     @Column(name="email")
     private String email;
 

@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Service
 @AllArgsConstructor
 public class IndividualCustomerBusinessRules {
+
     private final IndividualCustomerRepository individualCustomerRepository;
     private final MessageService messageService;
 

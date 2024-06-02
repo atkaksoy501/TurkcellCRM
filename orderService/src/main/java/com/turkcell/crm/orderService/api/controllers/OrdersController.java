@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/orders")
+@RequestMapping("/orderservice/api/v1/orders")
 public class OrdersController {
 
     private final OrderService orderService;
@@ -50,4 +50,10 @@ public class OrdersController {
         return orderService.getAll();
     }
 
+    @GetMapping("/isOrderProductExist/{accountId}")
+    @ResponseStatus(HttpStatus.OK)
+    public boolean isOrderProductExistByAccountId(@PathVariable int accountId) {
+
+        return orderService.isOrderProductExist(accountId);
+    }
 }

@@ -13,6 +13,4 @@ public interface ProductServiceClient {
     @GetMapping("/productservice/api/v1/products/getById/{id}")
     double getById(@PathVariable int id);
 
-
-
 }

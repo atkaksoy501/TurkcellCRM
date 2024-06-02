@@ -16,4 +16,6 @@ public interface OrderService {
     void delete(int id);
     GetOrderByIdResponse getById(int id);
     List<GetAllOrdersResponse> getAll();
+
+    boolean isOrderProductExist(int accountId);
 }

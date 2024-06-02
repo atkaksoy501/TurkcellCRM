@@ -6,6 +6,8 @@ import com.turkcell.crm.accountService.accountService.core.enums.AccountType;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
@@ -31,4 +33,10 @@ public class Account extends BaseEntity<Integer> {
 
     @Column(name = "address_id")
     private int addressId;
+
+    @ElementCollection
+    @CollectionTable(name = "product_ids")
+    @Column(name = "products")
+    private List<Integer> productIds;
+
 }

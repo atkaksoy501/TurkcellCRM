@@ -33,4 +33,6 @@ public class Product extends BaseEntity<Integer> {
     @ManyToOne
     @JoinColumn(name="catalog_id", referencedColumnName = "id")
     private Catalog catalog;
+
+
 }

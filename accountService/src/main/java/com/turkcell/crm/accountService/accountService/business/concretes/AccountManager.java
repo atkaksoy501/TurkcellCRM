@@ -7,29 +7,34 @@ import com.turkcell.crm.accountService.accountService.business.dtos.responses.Ac
 import com.turkcell.crm.accountService.accountService.business.dtos.responses.Account.GetAccountResponseById;
 import com.turkcell.crm.accountService.accountService.business.dtos.responses.Account.GetAllAccountResponse;
 import com.turkcell.crm.accountService.accountService.business.dtos.responses.Account.UpdatedAccountResponse;
+import com.turkcell.crm.accountService.accountService.business.rules.AccountBusinessRules;
 import com.turkcell.crm.accountService.accountService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.accountService.accountService.dataAccess.abstracts.AccountRepository;
 import com.turkcell.crm.accountService.accountService.entities.concretes.Account;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
 @Service
 public class AccountManager implements AccountService {
-
     private ModelMapperService modelMapperService;
     private AccountRepository accountRepository;
-
+    AccountBusinessRules accountBusinessRules;
     @Override
     public GetAccountResponseById getAccountById(int id) {
+
+        accountBusinessRules.accountMustExist(id);
+
         Account account = accountRepository.findById(id).orElse(null);
         return this.modelMapperService.forResponse().map(account, GetAccountResponseById.class);
     }
 
     @Override
     public List<GetAllAccountResponse> getAll() {
+
         List<Account> accounts = accountRepository.findAll().stream().filter(Account::isActive).toList();
         return accounts.stream().map(
                 account -> this.modelMapperService.forResponse().map(account, GetAllAccountResponse.class)
@@ -38,6 +43,7 @@ public class AccountManager implements AccountService {
 
     @Override
     public CreatedAccountResponse add(CreateAccountRequest createAccountRequest) {
+
         Account account = this.modelMapperService.forRequest().map(createAccountRequest, Account.class);
         account.setCreatedDate(LocalDateTime.now());
         Account savedAccount = accountRepository.save(account);
@@ -46,6 +52,9 @@ public class AccountManager implements AccountService {
 
     @Override
     public UpdatedAccountResponse update(UpdateAccountRequest updateAccountRequest) {
+
+        accountBusinessRules.accountMustExist(updateAccountRequest.getId());
+
         Account account = accountRepository.findById(updateAccountRequest.getId()).orElse(null);
         modelMapperService.forUpdate().map(updateAccountRequest, account);
         account.setUpdatedDate(LocalDateTime.now());
@@ -55,6 +64,10 @@ public class AccountManager implements AccountService {
 
     @Override
     public void delete(int id) {
+
+        accountBusinessRules.accountMustExist(id);
+        accountBusinessRules.checkIfAccountHasProducts(id);
+
         Account account = accountRepository.findById(id).orElse(null);
         account.setActive(false);
         account.setDeletedDate(LocalDateTime.now());

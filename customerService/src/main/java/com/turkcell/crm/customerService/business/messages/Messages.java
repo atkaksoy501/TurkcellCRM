@@ -6,7 +6,6 @@ public class Messages {
         public static final String CUSTOMER_NOT_FOUND = "CustomerNotFound";
         public static final String CITIZEN_NOT_FOUND="CitizenNotFound";
 
-
     }
 
     public static class AddressErrors{

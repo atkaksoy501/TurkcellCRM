@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +22,6 @@ public class CreatedAccountResponse {
     private AccountType accountType;
 
     private LocalDateTime createdDate;
+
+    private List<Integer> productIds;
 }

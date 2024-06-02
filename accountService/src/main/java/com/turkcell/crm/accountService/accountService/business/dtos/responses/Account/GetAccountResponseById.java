@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,4 +22,6 @@ public class GetAccountResponseById {
     private AccountType accountType;
 
     private int customerId;
+
+    private List<Integer> productIds;
 }

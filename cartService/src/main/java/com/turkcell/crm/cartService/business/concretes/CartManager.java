@@ -15,13 +15,13 @@ import com.turkcell.crm.cartService.entities.concretes.CartItem;
 import com.turkcell.crm.cartService.repositories.RedisRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
 @Service
 public class CartManager implements CartService {
+
     private final ModelMapperService modelMapperService;
     private final ProductServiceClient productServiceClient;
     private final RedisRepository redisRepository;
@@ -38,7 +38,7 @@ public class CartManager implements CartService {
         cart.setAccountId(addProductToCartRequest.getAccountId());
         CartItem cartItem = new CartItem();
         cartItem.setProductId(addProductToCartRequest.getProductId());
-        cartItem.setPrice(5);
+        cartItem.setPrice(1);
         cart.setTotalPrice(cart.getTotalPrice() + cartItem.getPrice());
         cart.getItems().add(cartItem);
         redisRepository.addItem(cart);

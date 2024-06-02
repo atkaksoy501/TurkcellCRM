@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -19,4 +21,6 @@ public class UpdateAccountRequest {
     private String accountName;
 
     private AccountStatus status;
+
+    private List<Integer> productIds;
 }
