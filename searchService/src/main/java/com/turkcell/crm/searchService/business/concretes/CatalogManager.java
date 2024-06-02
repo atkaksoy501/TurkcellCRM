@@ -1,6 +1,5 @@
 package com.turkcell.crm.searchService.business.concretes;
 
-import com.turkcell.crm.common.events.catalog.CreateCatalogEvent;
 import com.turkcell.crm.searchService.business.abstracts.CatalogService;
 import com.turkcell.crm.searchService.dataAccess.abstracts.CatalogRepository;
 import com.turkcell.crm.searchService.entities.concretes.Catalog;

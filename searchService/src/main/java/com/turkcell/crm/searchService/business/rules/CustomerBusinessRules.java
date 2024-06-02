@@ -1,7 +1,7 @@
 package com.turkcell.crm.searchService.business.rules;
 
+import com.turkcell.crm.core.core.exceptions.types.BusinessException;
 import com.turkcell.crm.searchService.core.business.abstracts.MessageService;
-import com.turkcell.crm.searchService.core.exceptions.types.BusinessException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;

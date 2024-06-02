@@ -1,7 +1,15 @@
 
-”	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëºðmJ$dad740d8-5986-414b-83ed-c07ec4c863db
-~	java:S125""<This block of commented-out lines of code should be removed.(•øˆã8‡‘Ÿÿú1J$7bc9818b-11aa-4b09-83d4-8161161dae4d
-¦
-java:S1128	"^Remove this unused import 'org.springframework.security.authentication.AuthenticationManager'.(ðŽþ–þÿÿÿÿ8½§òþú1J$c7454b12-6e9b-46fd-964e-3738229e55c6
-Í
-java:S1128"„Remove this unused import 'org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration'.(ÝÍ»æúÿÿÿÿ8½§òþú1J$1ee6a434-fca1-4518-8c0f-6336e92b61dd
+”	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëºðmJ$59435dbf-9ce7-4c44-9ffb-578e6b620251
+u
+java:S1135""2Complete the task associated to this TODO comment.(ü´Úî8Æ™ãÔý1J$2e422fa5-db57-4838-9807-a4187967b102
+o
+java:S1128"MRemove this unused import 'com.turkcell.crm.core.core.filters.JwtAuthFilter'.(ýÀÅüÿÿÿÿ8”áÕý1
+
+java:S1128	"_Remove this unused import 'org.springframework.security.authentication.AuthenticationProvider'.(±­¼üÿÿÿÿ8–áÕý1
+ˆ
+java:S1128
+"fRemove this unused import 'org.springframework.security.authentication.dao.DaoAuthenticationProvider'.(Ã‚öþÿÿÿÿ8–áÕý1
+z
+java:S1128"]Remove this unused import 'org.springframework.security.core.userdetails.UserDetailsService'.(¶…¥à8–áÕý1
+{
+java:S1128"YRemove this unused import 'org.springframework.security.crypto.password.PasswordEncoder'.(‰¡ßáÿÿÿÿÿ8–áÕý1

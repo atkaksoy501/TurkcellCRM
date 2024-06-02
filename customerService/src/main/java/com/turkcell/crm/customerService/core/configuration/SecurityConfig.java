@@ -1,6 +1,6 @@
 package com.turkcell.crm.customerService.core.configuration;
 
-import com.turkcell.crm.core.config.BaseSecurityService;
+import com.turkcell.crm.core.core.config.BaseSecurityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

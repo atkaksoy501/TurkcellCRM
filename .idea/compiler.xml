@@ -10,7 +10,6 @@
         <module name="invoiceService" />
         <module name="catalogService" />
         <module name="identityService" />
-        <module name="common" />
         <module name="customerService" />
         <module name="configServer" />
         <module name="searchService" />
@@ -22,6 +21,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common" target="17" />
       <module name="gatewayServer" target="19" />
     </bytecodeTargetLevel>
   </component>

@@ -1,11 +1,11 @@
 package com.turkcell.crm.identityService.business.concretes;
 
-import com.turkcell.crm.core.util.JwtService;
+import com.turkcell.crm.core.core.exceptions.types.BusinessException;
+import com.turkcell.crm.core.core.util.JwtService;
 import com.turkcell.crm.identityService.business.abstracts.AuthService;
 import com.turkcell.crm.identityService.business.abstracts.UserService;
 import com.turkcell.crm.identityService.business.dtos.requests.LoginRequest;
 import com.turkcell.crm.identityService.business.messages.AuthMessages;
-import com.turkcell.crm.identityService.core.utilities.exceptions.types.BusinessException;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

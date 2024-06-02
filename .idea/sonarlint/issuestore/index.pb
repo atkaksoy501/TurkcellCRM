@@ -1279,3 +1279,17 @@ borderService/src/main/java/com/turkcell/crm/orderService/core/configuration/App
 _orderService/src/main/java/com/turkcell/crm/orderService/core/configuration/SecurityConfig.java,a\1\a17abbbcdd0217b52e5bd0df1a874c0e2667c51c
 ä
 ZsearchService/src/main/java/com/turkcell/crm/searchService/entities/concretes/Product.java,d\5\d50ccf46fb23fd9fc27868ca662abfedd796d458
+¢
+raccountService/src/main/java/com/turkcell/crm/accountService/accountService/core/configuration/SecurityConfig.java,e\b\eb36c796f6e95461ca336b0c3fdf7dcdba7217a3
+¢
+rinvoiceService/src/main/java/com/turkcell/crm/invoiceService/invoiceService/core/configuration/SecurityConfig.java,c\a\caf73864c0f2b97d11d388bbc580cd11ac9325bc
+ë
+asearchService/src/main/java/com/turkcell/crm/searchService/core/configuration/SecurityConfig.java,3\1\31684ddc7e7cb54eb7d381a67510e65c91c41b36
+ë
+asearchService/src/main/java/com/turkcell/crm/searchService/business/abstracts/CatalogService.java,b\7\b72163cd71d51981e4094fbf538a5173af99a129
+ë
+asearchService/src/main/java/com/turkcell/crm/searchService/business/concretes/CatalogManager.java,3\c\3c826eb4d4851d64ca550562042694deb09fb23a
+ë
+asearchService/src/main/java/com/turkcell/crm/searchService/business/concretes/ProductManager.java,2\4\242e04d12bad346c26757b6c8ed09115409f446e
+è
+_searchService/src/main/java/com/turkcell/crm/searchService/kafka/consumers/CatalogConsumer.java,2\2\2234daee374453abcadf87390d5e3c8df91a2139

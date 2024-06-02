@@ -1,8 +1,8 @@
 package com.turkcell.crm.customerService.business.rules;
 
+import com.turkcell.crm.core.core.exceptions.types.BusinessException;
 import com.turkcell.crm.customerService.business.messages.Messages;
 import com.turkcell.crm.customerService.core.business.abstracts.MessageService;
-import com.turkcell.crm.customerService.core.crossCuttingConcerns.exceptions.types.BusinessException;
 import com.turkcell.crm.customerService.dataAccess.abstracts.IndividualCustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
