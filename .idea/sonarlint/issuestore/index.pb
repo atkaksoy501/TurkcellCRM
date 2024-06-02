@@ -1269,3 +1269,11 @@ bidentityService/src/main/java/com/turkcell/crm/identityService/business/message
 rcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/core/configuration/SecurityConfig.java,1\3\139577bdc28e2c64ac7e5f5b3f99920a5dd765ca
 µ
 „catalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/business/dtos/requests/product/CreateProductRequest.java,2\f\2fc550a6db6a86a0c121f7706eaebe19ed9de3b7
+…
+UconfigServer/src/main/java/com/turkcell/crm/configServer/ConfigServerApplication.java,3\8\3807d06ce0cfc0a89b0ba43ba8619f1e82146817
+—
+gcustomerService/src/main/java/com/turkcell/crm/customerService/business/rules/AddressBusinessRules.java,2\1\2167d9c7c3f6787b4207a110e48409775a4ccdf1
+š
+jcustomerService/src/main/java/com/turkcell/crm/customerService/dataAccess/abstracts/AddressRepository.java,3\7\37c6aea8f8fca043107b71f0d1169f5167d10553
+˜
+hcustomerService/src/main/java/com/turkcell/crm/customerService/entities/concretes/enums/AddressType.java,8\e\8e6e37f4619e323906ce3c4c4342b9afa623ff18

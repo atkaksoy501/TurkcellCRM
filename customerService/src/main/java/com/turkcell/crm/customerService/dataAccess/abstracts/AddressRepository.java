@@ -8,7 +8,8 @@ import java.util.List;
 public interface AddressRepository extends JpaRepository<Address, Integer> {
     boolean existsById(int id);
     List<Address> findByCustomerId(int customerId);
-    Address findByCustomerIdAndIsDefault(int customerId, boolean isDefault);
+
+    Address findByCustomerIdAndDefaultAddress(int customerId, boolean isDefault);
 
     long countByCustomerId(int customerId);
 }

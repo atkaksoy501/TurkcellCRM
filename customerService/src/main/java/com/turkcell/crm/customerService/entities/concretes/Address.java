@@ -45,4 +45,7 @@ public class Address extends BaseEntity<Integer> {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
+
+    @Column(name = "default_address")
+    private boolean defaultAddress;
 }

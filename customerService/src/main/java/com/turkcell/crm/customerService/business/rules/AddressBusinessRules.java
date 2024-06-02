@@ -68,8 +68,10 @@ public class AddressBusinessRules {
         }
     }
     //en az bir adresi olduğunu kontrol eder
-    public void checkIfAddressIsDefault(int customerId, int addressId) {
-        Address defaultAddress = addressRepository.findByCustomerIdAndIsDefault(customerId, true);
+
+
+    public void checkIfAddressIsDefaultAddress(int customerId, int addressId) {
+        Address defaultAddress = addressRepository.findByCustomerIdAndDefaultAddress(customerId, true);
         if (defaultAddress != null && defaultAddress.getId().equals(addressId)) {
             throw new BusinessException(messageService.getMessage(Messages.AddressErrors.CANNOT_DELETE_DEFAULT_ADDRESS));
         }
