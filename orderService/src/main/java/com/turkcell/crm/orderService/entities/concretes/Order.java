@@ -1,6 +1,5 @@
 package com.turkcell.crm.orderService.entities.concretes;
 
-import com.turkcell.crm.accountService.accountService.entities.concretes.Account;
 import com.turkcell.crm.orderService.core.entities.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

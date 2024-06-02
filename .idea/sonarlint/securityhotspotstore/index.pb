@@ -481,16 +481,12 @@ csearchService/src/main/java/com/turkcell/crm/searchService/api/controllers/Cust
 gsearchService/src/main/java/com/turkcell/crm/searchService/dataAccess/abstracts/CustomerRepository.java,4\0\40201ded7da386ed39bfeb72e495a6c8e3dca6f7
 í
 bidentityService/src/main/java/com/turkcell/crm/identityService/api/controllers/AuthController.java,6\d\6ddd9710ade75ca1116f987f4f5c1c62573e22f4
-£
-scustomerService/src/main/java/com/turkcell/crm/customerService/core/mernisVerification/abstracts/MernisService.java,2\4\24601bed5d1cffff6d04c785c40f14db84237c7e
 ã
 [gatewayService/src/main/java/com/turkcell/crm/gatewayService/GatewayServiceApplication.java,5\5\55084dcf140e1d059c3254dadfb0170bf5fdfa9a
 •
 ucatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/entities/concretes/ProductProperties.java,4\6\46029dcc8a1eef1e8fa2c5325acdb20d8744c0fa
 õ
 kcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/entities/concretes/Product.java,a\0\a0cfac1269b74744ae4dfb7dc531d417b8a25bee
-£
-scustomerService/src/main/java/com/turkcell/crm/customerService/core/mernisVerification/concretes/MernisManager.java,f\7\f71a3eec6ba02dd70b8ee4d5177747eee1a7c472
 ö
 jcustomerService/src/main/java/com/turkcell/crm/customerService/core/business/concretes/MessageManager.java,3\3\332fb20644f82aa301ee392098c0d502144aa635
 î
@@ -1277,3 +1273,9 @@ gcustomerService/src/main/java/com/turkcell/crm/customerService/business/rules/A
 jcustomerService/src/main/java/com/turkcell/crm/customerService/dataAccess/abstracts/AddressRepository.java,3\7\37c6aea8f8fca043107b71f0d1169f5167d10553
 ò
 hcustomerService/src/main/java/com/turkcell/crm/customerService/entities/concretes/enums/AddressType.java,8\e\8e6e37f4619e323906ce3c4c4342b9afa623ff18
+í
+borderService/src/main/java/com/turkcell/crm/orderService/core/configuration/ApplicationConfig.java,7\7\7778322b58aeb67bd41279d806c06fcb8447a2ee
+è
+_orderService/src/main/java/com/turkcell/crm/orderService/core/configuration/SecurityConfig.java,a\1\a17abbbcdd0217b52e5bd0df1a874c0e2667c51c
+ä
+ZsearchService/src/main/java/com/turkcell/crm/searchService/entities/concretes/Product.java,d\5\d50ccf46fb23fd9fc27868ca662abfedd796d458

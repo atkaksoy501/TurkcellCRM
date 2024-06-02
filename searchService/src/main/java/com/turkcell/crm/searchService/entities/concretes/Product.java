@@ -19,13 +19,13 @@ public class Product {
     @Field(name="name")
     private String name;
 
-    @Field(name="name")
+    @Field(name="description")
     private String description;
 
-    @Field(name="name")
+    @Field(name="price")
     private double price;
 
-    @Field(name="name")
+    @Field(name="stock_amount")
     private int stockAmount;
 
 }
