@@ -10,7 +10,6 @@ import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetAllI
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.GetIndividualCustomerResponseById;
 import com.turkcell.crm.customerService.business.dtos.responses.Customer.UpdatedIndividualCustomerResponse;
 import com.turkcell.crm.customerService.business.rules.IndividualCustomerBusinessRules;
-import com.turkcell.crm.customerService.core.mernisVerification.abstracts.MernisService;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.customerService.dataAccess.abstracts.IndividualCustomerRepository;
 import com.turkcell.crm.customerService.entities.concretes.IndividualCustomer;
@@ -31,17 +30,16 @@ public class IndividualCustomerManager implements IndividualCustomerService {
     private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
     private final IndividualCustomerProducer individualCustomerProducer;
     private final IndividualCustomerIdentityProducer individualCustomerIdentityProducer;
-    private final MernisService mernisService;
 
     @Override
     @Transactional
     public CreatedIndividualCustomerResponse save(CreateIndividualCustomerRequest individualCustomer) {
 
-        individualCustomerBusinessRules.validateCitizen(individualCustomer.getNationalityNumber(),
+     /*   individualCustomerBusinessRules.validateCitizen(individualCustomer.getNationalityNumber(),
                 individualCustomer.getFirstName(),
                 individualCustomer.getLastName(),
                 individualCustomer.getBirthDate());
-
+*/
         individualCustomerBusinessRules.individualCustomerMustBeUnique(individualCustomer.getNationalityNumber());
         IndividualCustomer customer = modelMapperService.forRequest().map(individualCustomer, IndividualCustomer.class);
         customer.setCreatedDate(LocalDateTime.now());

@@ -40,7 +40,7 @@ public class Address extends BaseEntity<Integer> {
     private String title;
 
     @Column(name = "door_number")
-    private int doorNumber;
+    private String doorNumber;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

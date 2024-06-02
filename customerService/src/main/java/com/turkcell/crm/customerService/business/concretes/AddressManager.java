@@ -7,6 +7,7 @@ import com.turkcell.crm.customerService.business.dtos.responses.Address.CreatedA
 import com.turkcell.crm.customerService.business.dtos.responses.Address.GetAddressResponseById;
 import com.turkcell.crm.customerService.business.dtos.responses.Address.GetAllAddressResponse;
 import com.turkcell.crm.customerService.business.dtos.responses.Address.UpdatedAddressResponse;
+import com.turkcell.crm.customerService.business.rules.AddressBusinessRules;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.customerService.dataAccess.abstracts.AddressRepository;
 import com.turkcell.crm.customerService.entities.concretes.Address;
@@ -21,8 +22,11 @@ import java.util.List;
 public class AddressManager implements AddressService {
     private ModelMapperService modelMapperService;
     private AddressRepository addressRepository;
+    private AddressBusinessRules addressBusinessRules;
+
     @Override
     public CreatedAddressResponse add(CreateAddressRequest createAddressRequest) {
+        addressBusinessRules.validateCreateAddressRequest(createAddressRequest);
         Address address = this.modelMapperService.forRequest().map(createAddressRequest, Address.class);
         address.setCreatedDate(LocalDateTime.now());
         Address savedAddress = addressRepository.save(address);
@@ -31,15 +35,19 @@ public class AddressManager implements AddressService {
 
     @Override
     public UpdatedAddressResponse update(UpdateAddressRequest updateAddressRequest) {
+        addressBusinessRules.validateUpdateAddressRequest(updateAddressRequest);
+        addressBusinessRules.checkIfAddressExists(updateAddressRequest.getId());
         Address address = addressRepository.findById(updateAddressRequest.getId()).orElse(null);
         modelMapperService.forUpdate().map(updateAddressRequest, address);
         address.setUpdatedDate(LocalDateTime.now());
-        Address savedAddress = addressRepository.save(address);
-        return this.modelMapperService.forResponse().map(savedAddress, UpdatedAddressResponse.class);
+        Address updatedAddress = addressRepository.save(address);
+        return this.modelMapperService.forResponse().map(updatedAddress, UpdatedAddressResponse.class);
     }
 
     @Override
     public void delete(int id) {
+      //  addressBusinessRules.checkIfCustomerHasMultipleAddresses(customerId);
+      //  addressBusinessRules.checkIfAddressIsDefault(customerId,id);
         Address address = addressRepository.findById(id).orElse(null);
         address.setActive(false);
         address.setDeletedDate(LocalDateTime.now());

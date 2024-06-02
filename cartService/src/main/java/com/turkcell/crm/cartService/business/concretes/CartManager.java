@@ -38,7 +38,7 @@ public class CartManager implements CartService {
         cart.setAccountId(addProductToCartRequest.getAccountId());
         CartItem cartItem = new CartItem();
         cartItem.setProductId(addProductToCartRequest.getProductId());
-        cartItem.setPrice();
+        cartItem.setPrice(5);
         cart.setTotalPrice(cart.getTotalPrice() + cartItem.getPrice());
         cart.getItems().add(cartItem);
         redisRepository.addItem(cart);
