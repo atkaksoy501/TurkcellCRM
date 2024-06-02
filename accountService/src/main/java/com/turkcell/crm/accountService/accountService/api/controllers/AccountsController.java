@@ -7,6 +7,7 @@ import com.turkcell.crm.accountService.accountService.business.dtos.responses.Ac
 import com.turkcell.crm.accountService.accountService.business.dtos.responses.Account.GetAccountResponseById;
 import com.turkcell.crm.accountService.accountService.business.dtos.responses.Account.GetAllAccountResponse;
 import com.turkcell.crm.accountService.accountService.business.dtos.responses.Account.UpdatedAccountResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/v1/accounts")
 public class AccountsController {
+
     private AccountService accountService;
 
     @GetMapping("/getall")
@@ -39,14 +41,13 @@ public class AccountsController {
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public UpdatedAccountResponse update(@RequestBody UpdateAccountRequest updateAccountRequest) {
+    public UpdatedAccountResponse update(@Valid  @RequestBody UpdateAccountRequest updateAccountRequest) {
         return accountService.update(updateAccountRequest);
     }
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public CreatedAccountResponse add(@RequestBody CreateAccountRequest createAccountRequest) {
+    public CreatedAccountResponse add(@Valid @RequestBody CreateAccountRequest createAccountRequest) {
         return accountService.add(createAccountRequest);
     }
-
 }

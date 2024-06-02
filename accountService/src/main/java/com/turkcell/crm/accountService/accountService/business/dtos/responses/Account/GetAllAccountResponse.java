@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class GetAllAccountResponse {
+
     private AccountStatus status;
 
     private String accountNumber;

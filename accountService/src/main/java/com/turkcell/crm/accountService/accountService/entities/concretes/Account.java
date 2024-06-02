@@ -4,16 +4,16 @@ import com.turkcell.crm.accountService.accountService.core.entities.BaseEntity;
 import com.turkcell.crm.accountService.accountService.core.enums.AccountStatus;
 import com.turkcell.crm.accountService.accountService.core.enums.AccountType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "accounts")
 public class Account extends BaseEntity<Integer> {
+
     @Column(name = "status")
     private AccountStatus status;
 

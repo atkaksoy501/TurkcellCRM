@@ -9,6 +9,7 @@ import com.turkcell.crm.cartService.business.dtos.responses.GetAllCartsResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.GetCartResponse;
 import com.turkcell.crm.cartService.business.dtos.responses.UpdatedCartResponse;
 import com.turkcell.crm.cartService.entities.concretes.Cart;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.Map;
 @AllArgsConstructor
 @RequestMapping("/api/v1/carts")
 public class CartsController {
+
     private final CartService cartService;
 
     @PostMapping("/add")
@@ -29,7 +31,7 @@ public class CartsController {
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public UpdatedCartResponse update(UpdateCartRequest updateCartRequest) {
+    public UpdatedCartResponse update(@RequestBody @Valid UpdateCartRequest updateCartRequest) {
         return cartService.updateCart(updateCartRequest);
     }
 
@@ -59,13 +61,13 @@ public class CartsController {
 
     @DeleteMapping("/removeproduct/{productId}/{cartId}")
     @ResponseStatus(HttpStatus.OK)
-    public void removeProductFromCart(int productId, int cartId) {
+    public void removeProductFromCart(@PathVariable int productId, @PathVariable int cartId) {
         cartService.removeProductFromCart(productId, cartId);
     }
 
-    @DeleteMapping("/clear")
+    @DeleteMapping("/clear/{cartId}")
     @ResponseStatus(HttpStatus.OK)
-    public void clearCart(int cartId) {
+    public void clearCart(@PathVariable int cartId) {
         cartService.clearCart(cartId);
     }
 

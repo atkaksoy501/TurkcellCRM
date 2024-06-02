@@ -10,6 +10,8 @@ import com.turkcell.crm.catalogService.catalogService.business.dtos.responses.pr
 import com.turkcell.crm.catalogService.catalogService.core.mapping.ModelMapperService;
 import com.turkcell.crm.catalogService.catalogService.dataAccess.abstracts.ProductRepository;
 import com.turkcell.crm.catalogService.catalogService.entities.concretes.Product;
+import com.turkcell.crm.catalogService.catalogService.kafka.producers.ProductProducer;
+import com.turkcell.crm.common.events.catalog.CreateProductEvent;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +24,18 @@ public class ProductManager implements ProductService {
 
     private ModelMapperService modelMapperService;
     private ProductRepository productRepository;
+    private final ProductProducer productProducer;
 
     @Override
     public CreatedProductResponse add(CreateProductRequest createProductRequest) {
         Product product = this.modelMapperService.forRequest().map(createProductRequest, Product.class);
         product.setCreatedDate(LocalDateTime.now());
         Product savedProduct = productRepository.save(product);
-        return this.modelMapperService.forResponse().map(savedProduct, CreatedProductResponse.class);
+
+        CreateProductEvent event = modelMapperService.forResponse().map(savedProduct, CreateProductEvent.class);
+        productProducer.sendMessage(event);
+
+        return modelMapperService.forResponse().map(savedProduct, CreatedProductResponse.class);
     }
 
     @Override

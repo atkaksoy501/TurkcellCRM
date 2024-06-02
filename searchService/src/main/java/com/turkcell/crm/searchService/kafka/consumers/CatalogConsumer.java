@@ -13,13 +13,16 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CatalogConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(CatalogConsumer.class);
-    private CatalogService catalogService;
+
+    private final CatalogService catalogService;
+
     @KafkaListener(topics = "catalog-created",groupId="catalog-create")
     public void Consume(CreateCatalogEvent createCatalogEvent){
 
-        Catalog catalog=new Catalog();
+        LOGGER.info("Catalog event consumed => {}", createCatalogEvent);
+        Catalog catalog = new Catalog();
         catalog.setId(createCatalogEvent.getId());
         catalog.setName(createCatalogEvent.getName());
-        this.catalogService.add(catalog);
+        catalogService.add(catalog);
     }
 }

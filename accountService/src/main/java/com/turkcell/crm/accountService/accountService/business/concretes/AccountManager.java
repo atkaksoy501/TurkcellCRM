@@ -12,15 +12,16 @@ import com.turkcell.crm.accountService.accountService.dataAccess.abstracts.Accou
 import com.turkcell.crm.accountService.accountService.entities.concretes.Account;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
 @Service
 public class AccountManager implements AccountService {
+
     private ModelMapperService modelMapperService;
     private AccountRepository accountRepository;
+
     @Override
     public GetAccountResponseById getAccountById(int id) {
         Account account = accountRepository.findById(id).orElse(null);
@@ -54,7 +55,6 @@ public class AccountManager implements AccountService {
 
     @Override
     public void delete(int id) {
-        //soft delete
         Account account = accountRepository.findById(id).orElse(null);
         account.setActive(false);
         account.setDeletedDate(LocalDateTime.now());

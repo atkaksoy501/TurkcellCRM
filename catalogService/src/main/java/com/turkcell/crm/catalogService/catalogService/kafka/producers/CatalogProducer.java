@@ -17,7 +17,7 @@ public class CatalogProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
     public void sendMessage(CreateCatalogEvent createCatalogEvent){
-        LOGGER.info(String.format("Catalog added =>%s",createCatalogEvent.toString()));
+        LOGGER.info(String.format("Catalog added =>{}",createCatalogEvent.toString()));
         Message<CreateCatalogEvent> message = MessageBuilder.withPayload(createCatalogEvent)
                 .setHeader(KafkaHeaders.TOPIC,"catalog-created")
                 .build();

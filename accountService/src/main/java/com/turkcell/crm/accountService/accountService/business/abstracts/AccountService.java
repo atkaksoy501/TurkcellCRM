@@ -11,6 +11,7 @@ import com.turkcell.crm.accountService.accountService.business.dtos.responses.Ac
 import java.util.List;
 
 public interface AccountService {
+
     GetAccountResponseById getAccountById(int id);
     List<GetAllAccountResponse> getAll();
     CreatedAccountResponse add(CreateAccountRequest createAccountRequest);
