@@ -6,7 +6,6 @@ import com.turkcell.crm.customerService.business.dtos.requests.Customer.UpdateIn
 import com.turkcell.crm.customerService.business.rules.IndividualCustomerBusinessRules;
 import com.turkcell.crm.customerService.core.business.abstracts.MessageService;
 import com.turkcell.crm.customerService.core.business.concretes.MessageManager;
-
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperManager;
 import com.turkcell.crm.customerService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.customerService.dataAccess.abstracts.IndividualCustomerRepository;
