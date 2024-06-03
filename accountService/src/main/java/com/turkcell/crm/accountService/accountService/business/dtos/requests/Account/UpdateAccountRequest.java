@@ -17,7 +17,7 @@ public class UpdateAccountRequest {
     @NotNull
     private int id;
 
-    @Size(min = 2, max = 30)
+    @Size(min = 2, max = 50)
     private String accountName;
 
     private AccountStatus status;

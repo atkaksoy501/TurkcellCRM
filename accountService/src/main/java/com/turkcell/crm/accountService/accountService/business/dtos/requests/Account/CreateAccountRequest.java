@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class CreateAccountRequest {
 
     @NotNull
-    @Size(min = 2, max = 30)
+    @Size(min = 2, max = 50)
     private String accountName;
 
     @NotNull

@@ -17,6 +17,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -47,37 +48,77 @@ public class CartManager implements CartService {
     @Override
     public void removeProductFromCart(int productId, int cartId) {
 
+        Cart cart = redisRepository.getCartByAccountId(String.valueOf(cartId));
+        if (cart != null) {
+            CartItem itemToRemove = null;
+            for (CartItem item : cart.getItems()) {
+                if (item.getProductId() == productId) {
+                    itemToRemove = item;
+                    break;
+                }
+            }
+            if (itemToRemove != null) {
+                cart.getItems().remove(itemToRemove);
+                cart.setTotalPrice(cart.getTotalPrice() - itemToRemove.getPrice());
+                redisRepository.addItem(cart);
+            }
+        }
     }
 
     @Override
     public void clearCart(int cartId) {
 
+        Cart cart = redisRepository.getCartByAccountId(String.valueOf(cartId));
+        if (cart != null) {
+            cart.getItems().clear();
+            cart.setTotalPrice(0);
+            redisRepository.addItem(cart);
+        }
+
     }
 
     @Override
     public CreatedCartResponse createCart(CreateCartRequest createCartRequest) {
-        return null;
+        Cart cart = new Cart();
+        cart.setAccountId(createCartRequest.getAccountId());
+        redisRepository.addItem(cart);
+        return modelMapperService.forResponse().map(cart, CreatedCartResponse.class);
 
     }
 
     @Override
-    public void deleteCart(int cartId) {
-
-    }
+    public void deleteCart(int cartId) {redisRepository.deleteItem(String.valueOf(cartId));}
 
     @Override
     public UpdatedCartResponse updateCart(UpdateCartRequest updateCartRequest) {
+
+        Cart cart = redisRepository.getCartByAccountId(updateCartRequest.getAccountId());
+        if (cart != null) {
+            cart.setTotalPrice(updateCartRequest.getTotalPrice());
+            cart.setItems(updateCartRequest.getItems());
+            redisRepository.addItem(cart);
+            return modelMapperService.forResponse().map(cart, UpdatedCartResponse.class);
+        }
         return null;
     }
 
     @Override
     public GetCartResponse getCart(int cartId) {
+        Cart cart = redisRepository.getCartByAccountId(String.valueOf(cartId));
+        if (cart != null) {
+            return modelMapperService.forResponse().map(cart, GetCartResponse.class);
+        }
         return null;
     }
 
     @Override
     public List<GetAllCartsResponse> getAllCarts() {
-        return null;
+
+        Map<String, Cart> carts = redisRepository.getAllItems();
+        List<GetAllCartsResponse> response = carts.values().stream()
+                .map(cart -> modelMapperService.forResponse().map(cart, GetAllCartsResponse.class))
+                .collect(Collectors.toList());
+        return response;
     }
 
     @Override
