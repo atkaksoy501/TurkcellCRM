@@ -1,4 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Öÿ¹÷øÿÿÿÿ
-f	java:S116"QRename this field "Status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×˜ñ
-i	java:S116"ORename this field "Type" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿà¢ªüÿÿÿÿ
