@@ -15,6 +15,7 @@ import com.turkcell.crm.orderService.entities.concretes.Order;
 import com.turkcell.crm.orderService.kafka.producers.OrderProducer;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,6 +30,7 @@ public class OrderManager implements OrderService {
     private final OrderProducer orderProducer;
 
     @Override
+    @Transactional
     public CreatedOrderResponse save(CreateOrderRequest createOrderRequest) {
 
         Order order = modelMapperService.forRequest().map(createOrderRequest, Order.class);

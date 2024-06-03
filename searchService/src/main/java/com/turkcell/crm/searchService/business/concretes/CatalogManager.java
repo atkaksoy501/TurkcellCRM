@@ -13,9 +13,6 @@ public class CatalogManager implements CatalogService {
     private final CatalogRepository catalogRepository;
 
     @Override
-    public void add(Catalog catalog) {
-
-        catalogRepository.save(catalog);
-
+    public void add(Catalog catalog) {catalogRepository.save(catalog);
     }
 }
