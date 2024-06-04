@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/searchservice/api/v1/customers")
+@RequestMapping("/api/v1/customers")
 public class CustomersController {
     private final CustomerService customerService;
 
@@ -20,17 +20,18 @@ public class CustomersController {
     public Page<Customer> searchCustomers(
             @RequestParam Optional<String> nationalityId,
             @RequestParam Optional<String> customerId,
-            @RequestParam Optional<Long> accountNumber,
-            @RequestParam Optional<Long> gsmNumber,
+            @RequestParam Optional<String> accountNumber,
+            @RequestParam Optional<String> mobilePhoneNumber,
             @RequestParam Optional<String> firstName,
             @RequestParam Optional<String> middleName,
             @RequestParam Optional<String> lastName,
-            @RequestParam Optional<Long> orderNumber,
+            @RequestParam Optional<String> orderNumber,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "10") int size
+    ) {
 
         Pageable pageable = PageRequest.of(page, size);
         return customerService.searchCustomers(
-                nationalityId, customerId, accountNumber, gsmNumber, firstName, middleName, lastName, orderNumber, pageable);
+                nationalityId, customerId, accountNumber, mobilePhoneNumber, firstName, middleName, lastName, orderNumber, pageable);
     }
 }

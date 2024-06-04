@@ -14,12 +14,13 @@ public interface CustomerService {
     Page<Customer> searchCustomers(
             Optional<String> nationalityId,
             Optional<String> customerId,
-            Optional<Long> accountNumber,
-            Optional<Long> gsmNumber,
+            Optional<String> accountNumber,
+            Optional<String> mobilePhoneNumber,
             Optional<String> firstName,
             Optional<String> middleName,
             Optional<String> lastName,
-            Optional<Long> orderNumber,
-            Pageable pageable);
+            Optional<String> orderNumber,
+            Pageable pageable
+    );
 
 }

@@ -1,2 +1,8 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÁÆİúÿÿÿÿ8—¡Áİø1J$ae0d2a27-323c-4f3d-8613-e584e3c1da80
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÁÆİúÿÿÿÿ8—¡Áİø1J$db71b525-53ad-47d7-b6bc-6d441ec79491
+‡
+java:S2259;"EA "NullPointerException" could be thrown; "product" is nullable here.(–Êî8½ğ—ş1J$b9aa58ad-343b-440a-b5b4-ac235f2e917c
+
+java:S2259C"EA "NullPointerException" could be thrown; "product" is nullable here.(‘×Œ øÿÿÿÿ8½ğ—ş1J$75c917d3-5467-4e55-ae6f-7d399484524b
+ˆ
+java:S2259P"EA "NullPointerException" could be thrown; "product" is nullable here.(çßì›8½ğ—ş1J$dd11561b-58b1-46fb-8453-b2c6238f5d72

@@ -32,7 +32,7 @@ public class IndividualCustomersController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@Valid @RequestBody CreateIndividualCustomerRequest createIndividualCustomerRequest) {
+    public void add(@RequestBody CreateIndividualCustomerRequest createIndividualCustomerRequest) {
         individualCustomerService.save(createIndividualCustomerRequest);
     }
 

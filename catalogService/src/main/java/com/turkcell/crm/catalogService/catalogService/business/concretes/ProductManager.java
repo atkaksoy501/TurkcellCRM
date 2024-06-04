@@ -22,8 +22,8 @@ import java.util.List;
 @Service
 public class ProductManager implements ProductService {
 
-    private ModelMapperService modelMapperService;
-    private ProductRepository productRepository;
+    private final ModelMapperService modelMapperService;
+    private final ProductRepository productRepository;
     private final ProductProducer productProducer;
 
     @Override

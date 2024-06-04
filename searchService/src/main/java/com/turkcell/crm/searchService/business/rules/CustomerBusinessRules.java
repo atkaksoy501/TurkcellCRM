@@ -25,21 +25,21 @@ public class CustomerBusinessRules {
         }
     }
 
-    public void validateAccountNumber(Long accountNumber) {
-        if (accountNumber < 0) {
-            throw new BusinessException("Account Number must be a positive integer.");
+    public void validateAccountNumber(String accountNumber) {
+        if (accountNumber.length() != 8) {
+            throw new BusinessException("Account Number must be 8 characters long.");
         }
     }
 
-    public void validateGsmNumber(Long gsmNumber) {
-        if (String.valueOf(gsmNumber).length() != 11) {
+    public void validateMobilePhoneNumber(String mobilePhoneNumber) {
+        if (mobilePhoneNumber.length() != 11) {
             throw new BusinessException("GSM Number must be 11 digits long.");
         }
     }
 
-    public void validateOrderNumber(Long orderNumber) {
-        if (orderNumber < 0) {
-            throw new BusinessException("Order Number must be a positive integer.");
+    public void validateOrderNumber(String orderNumber) {
+        if (orderNumber.length() != 8) {
+            throw new BusinessException("Order Number must be 8 characters long.");
         }
     }
 

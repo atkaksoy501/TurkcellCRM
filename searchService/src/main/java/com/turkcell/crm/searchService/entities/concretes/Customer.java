@@ -30,7 +30,7 @@ public class Customer {
     @Field(name = "last_name")
     private String lastName;
 
-    @Field(name = "national_id")
+    @Field(name = "nationality_id")
     private String nationalityId;
 
     @Field(name = "mobile_phone_number")

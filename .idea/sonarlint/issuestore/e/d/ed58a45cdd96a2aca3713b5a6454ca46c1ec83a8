@@ -1,2 +1,8 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÁÆİúÿÿÿÿ8ôåÏİø1J$0a9d4170-540b-42a1-b040-15fa826a1f8f
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÁÆİúÿÿÿÿ8ôåÏİø1J$c8cb76ac-388e-4ccc-bff8-bf2b588dde16
+
+java:S2259D"EA "NullPointerException" could be thrown; "catalog" is nullable here.(¸÷ü‚ıÿÿÿÿ8àÍ—ş1J$7cbf2cda-8929-43f4-a20a-00c01adfaf64
+
+java:S2259<"EA "NullPointerException" could be thrown; "catalog" is nullable here.(‰Øİúÿÿÿÿ8àÍ—ş1J$d946394e-38dc-4e2a-9c91-60235c2a11f8
+™
+java:S1128"VRemove this unused import 'com.turkcell.crm.common.events.catalog.CreateProductEvent'.(ÖÚ’‘8€¾ŒŸş1J$2d3bc316-e79a-42df-87a0-993335d60ea1

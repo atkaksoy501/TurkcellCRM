@@ -12,12 +12,6 @@ import lombok.*;
 @Table(name = "product_properties")
 public class ProductProperties extends BaseEntity<Integer> {
 
-//    @Column(name="product_id")
-//    private int productId;
-
-//    @Column(name="property_id")
-//    private int propertyId;
-
     @Column(name="value")
     private String value;
 

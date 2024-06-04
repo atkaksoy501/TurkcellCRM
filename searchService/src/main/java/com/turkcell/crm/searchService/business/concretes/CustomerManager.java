@@ -22,22 +22,25 @@ public class CustomerManager implements CustomerService {
 
     private final CustomerBusinessRules customerBusinessRules;
     private final CustomerRepository customerRepository;
-    private MongoTemplate mongoTemplate;
+    private final MongoTemplate mongoTemplate;
 
     @Override
-    public void add(Customer customer) {customerRepository.save(customer);}
+    public void add(Customer customer) {
+        customerRepository.save(customer);
+    }
 
     @Override
     public Page<Customer> searchCustomers(
             Optional<String> nationalityId,
             Optional<String> customerId,
-            Optional<Long> accountNumber,
-            Optional<Long> gsmNumber,
+            Optional<String> accountNumber,
+            Optional<String> mobilePhoneNumber,
             Optional<String> firstName,
             Optional<String> middleName,
             Optional<String> lastName,
-            Optional<Long> orderNumber,
-            Pageable pageable) {
+            Optional<String> orderNumber,
+            Pageable pageable
+    ) {
 
         Query query = new Query();
 
@@ -49,13 +52,13 @@ public class CustomerManager implements CustomerService {
             customerBusinessRules.validateCustomerId(id);
             query.addCriteria(Criteria.where("customerId").is(Long.parseLong(id)));
         });
-        accountNumber.ifPresent(id -> {
-            customerBusinessRules.validateAccountNumber(id);
-            query.addCriteria(Criteria.where("accountNumber").is(id));
+        accountNumber.ifPresent(number -> {
+            customerBusinessRules.validateAccountNumber(number);
+            query.addCriteria(Criteria.where("accountNumber").is(number));
         });
-        gsmNumber.ifPresent(id -> {
-            customerBusinessRules.validateGsmNumber(id);
-            query.addCriteria(Criteria.where("gsmNumber").is(id));
+        mobilePhoneNumber.ifPresent(number -> {
+            customerBusinessRules.validateMobilePhoneNumber(number);
+            query.addCriteria(Criteria.where("mobilePhoneNumber").is(number));
         });
         firstName.ifPresent(name -> query.addCriteria(Criteria.where("firstName").regex("^" + name, "i")));
         middleName.ifPresent(name -> query.addCriteria(Criteria.where("middleName").regex("^" + name, "i")));

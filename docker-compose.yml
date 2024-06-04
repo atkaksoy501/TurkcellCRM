@@ -1,0 +1,231 @@
+version: '3.8'
+
+services:
+
+  zookeeper:
+    image: 'bitnami/zookeeper:latest'
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  kafka:
+    image: 'bitnami/kafka:latest'
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_LISTENERS=LISTENER_DEVELOPMENT://localhost:9092,LISTENER_PRODUCTION://kafka:29092
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=LISTENER_DEVELOPMENT:PLAINTEXT,LISTENER_PRODUCTION:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=LISTENER_DEVELOPMENT://localhost:9092,LISTENER_PRODUCTION://kafka:29092
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=LISTENER_PRODUCTION
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+
+  crmconfigserver:
+    image: crmconfigserverimage
+    build: ./configServer
+    restart: always
+    container_name : crmconfigserver
+    volumes:
+      - ./configServer:/app
+    ports:
+      - 8050:8050
+
+  crmdiscoveryserver:
+    image: crmdiscoveryserverimage
+    build: ./discoveryServer
+    restart: always
+    container_name: crmdiscoveryserver
+    volumes:
+      - ./discoveryServer:/app
+    ports:
+      - 9000:9000
+    depends_on:
+      - crmconfigserver
+
+  crmgatewayserver:
+    image: crmgatewayserverimage
+    build: ./gatewayService
+    restart: always
+    container_name: crmgatewayserver
+    volumes:
+      - ./gatewayService:/app
+    ports:
+      - 9002:9002
+    depends_on:
+      - crmconfigserver
+      - crmdiscoveryserver
+
+  customerdbprod:
+    container_name: customerdbprod
+    image: postgres
+    ports:
+      - "5460:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=customerdbprod
+
+  crmcustomerservice:
+    build: ./customerService
+    container_name: crmcustomerservice
+    image: crmcustomerserviceimage
+    volumes:
+      - ./customerService:/app
+    depends_on:
+      - customerdbprod
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
+
+  identitydbprod:
+    container_name: identitydbprod
+    image: postgres
+    ports:
+      - "5461:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=identitydbprod
+
+  crmidentityservice:
+    build: ./identityService
+    container_name: crmidentityservice
+    image: crmidentityserviceimage
+    volumes:
+      - ./identityService:/app
+    depends_on:
+      - identitydbprod
+      - crmdiscoveryserver
+      - crmconfigserver
+
+  accountdbprod:
+    container_name: accountdbprod
+    image: postgres
+    ports:
+      - "5462:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=accountdbprod
+
+  crmaccountservice:
+    build: ./accountService
+    container_name: crmaccountservice
+    image: crmaccountserviceimage
+    volumes:
+      - ./accountService:/app
+    depends_on:
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
+
+  crmcartdbprod:
+    container_name: crmcartdbprod
+    image: postgres
+    ports:
+      - "5463:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=crmcartdbprod
+
+  crmcartservice:
+    build: ./cartService
+    container_name: crmcartservice
+    image: crmcartserviceimage
+    volumes:
+      - ./cartService:/app
+    depends_on:
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
+
+  crmcatalogdbprod:
+    container_name: crmcatalogdbprod
+    image: postgres
+    ports:
+      - "5464:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=crmcatalogdbprod
+
+  crmcatalogservice:
+    build: ./catalogService
+    container_name: crmcatalogservice
+    image: crmcatalogserviceimage
+    volumes:
+      - ./catalogService:/app
+    depends_on:
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
+
+  crminvoicedbprod:
+    container_name: crminvoicedbprod
+    image: postgres
+    ports:
+      - "5465:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=crminvoicedbprod
+
+  crminvoiceservice:
+    build: ./invoiceService
+    container_name: crminvoiceservice
+    image: crminvoiceserviceimage
+    volumes:
+      - ./invoiceService:/app
+    depends_on:
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
+
+  crmorderdbprod:
+    container_name: crmorderdbprod
+    image: postgres
+    ports:
+      - "5466:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=crmorderdbprod
+
+  crmorderservice:
+    build: ./orderService
+    container_name: crmorderservice
+    image: crmorderserviceimage
+    volumes:
+      - ./orderService:/app
+    depends_on:
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
+
+  crmsearchdbprod:
+    container_name: crmsearchdbprod
+    image: mongodb/mongodb-community-server
+    ports:
+      - "27017:27017"
+    environment:
+        - MONGO_INITDB_ROOT_USERNAME=admin
+        - MONGO_INITDB_ROOT_PASSWORD=123456
+        - MONGO_INITDB_DATABASE=crmsearchdbprod
+
+  crmsearchservice:
+    build: ./searchService
+    container_name: crmsearchservice
+    image: crmsearchserviceimage
+    volumes:
+      - ./searchService:/app
+    depends_on:
+      - crmdiscoveryserver
+      - crmconfigserver
+      - kafka
