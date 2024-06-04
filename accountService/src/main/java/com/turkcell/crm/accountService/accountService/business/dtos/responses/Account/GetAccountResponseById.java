@@ -24,4 +24,5 @@ public class GetAccountResponseById {
     private int customerId;
 
     private List<Integer> productIds;
+
 }

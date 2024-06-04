@@ -20,6 +20,7 @@ public class OrderProductsConsumer {
 
     @KafkaListener(topics = "order-products-created",groupId="order-products-create")
     public void consume(CreateOrderProductsEvent createdOrderProductsEvent){
+
         UpdateAccountRequest updateAccountRequest = new UpdateAccountRequest();
         updateAccountRequest.setId(createdOrderProductsEvent.getAccountId());
         updateAccountRequest.setProductIds(createdOrderProductsEvent.getProductIds());

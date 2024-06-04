@@ -12,8 +12,6 @@ import java.util.List;
 @Data
 public class CreateOrderRequest {
 
-    private double totalAmount;
-
     private int addressId;
 
     private List<Integer> productIds;

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,5 +24,8 @@ public class UpdatedAccountResponse {
 
     private LocalDateTime updatedDate;
 
+    private int customerId;
+
     private List<Integer> productIds;
+
 }

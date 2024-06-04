@@ -23,5 +23,8 @@ public class CreatedAccountResponse {
 
     private LocalDateTime createdDate;
 
+    private int customerId;
+
     private List<Integer> productIds;
+
 }

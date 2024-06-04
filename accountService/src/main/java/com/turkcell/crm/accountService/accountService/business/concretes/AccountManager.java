@@ -20,9 +20,10 @@ import java.util.List;
 @AllArgsConstructor
 @Service
 public class AccountManager implements AccountService {
-    private final ModelMapperService modelMapperService;
-    private final AccountRepository accountRepository;
-    private final AccountBusinessRules accountBusinessRules;
+
+    private ModelMapperService modelMapperService;
+    private AccountRepository accountRepository;
+    private AccountBusinessRules accountBusinessRules;
     @Override
     public GetAccountResponseById getAccountById(int id) {
 
