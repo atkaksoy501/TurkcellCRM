@@ -16,7 +16,7 @@ public class CustomerBusinessRules {
 
     public void validateNationalityId(String nationalityId) {
         if (!nationalityId.matches("\\d{11}")) {
-            throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.NATIOANLITY_ID_MUST_11_DIGITS));
+            throw new BusinessException(messageService.getMessage(Messages.IndividualCustomerErrors.NATIONALITY_ID_MUST_BE_11_DIGITS));
         }
     }
 

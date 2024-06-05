@@ -1198,3 +1198,13 @@ pcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/kaf
 „catalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/business/dtos/requests/catalog/CreateCatalogRequest.java,5\3\53f07df057db86fa333ac5e4954eeba0e0f416b2
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Š
+ZsearchService/src/main/java/com/turkcell/crm/searchService/business/messages/Messages.java,5\3\53dbf8f88531abe3d519e533daed19ddd5554fc7
+–
+fsearchService/src/main/java/com/turkcell/crm/searchService/core/business/abstracts/MessageService.java,6\6\66144633e868adbf5051e20eb763ad537cac42af
+–
+fsearchService/src/main/java/com/turkcell/crm/searchService/core/business/concretes/MessageManager.java,4\0\405ad91350f39e0b2238c6307153dca04ba4b3c3
+”
+dsearchService/src/main/java/com/turkcell/crm/searchService/core/configuration/ApplicationConfig.java,3\6\36a44898a71e22e77750499d4f2620245d0eb58c
+–
+fsearchService/src/main/java/com/turkcell/crm/searchService/dataAccess/abstracts/ProductRepository.java,7\e\7e5be047931dc09ecf32b249530190cca7209491

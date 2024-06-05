@@ -9,7 +9,8 @@ import java.util.Optional;
 
 public interface CatalogService {
 
-    void add(Catalog Catalog);
+    void add(Catalog catalog);
+
     Page<Catalog> searchCatalogs(
             Optional<String> name,
             Optional<Integer> id,

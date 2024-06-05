@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface ProductService {
 
     void add(Product product);
+
     Page<Product> searchProducts(
             Optional<String> name,
             Optional<Integer> id,

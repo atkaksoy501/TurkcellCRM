@@ -7,8 +7,8 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface CustomerService {
-    void add(Customer customer);
 
+    void add(Customer customer);
 
     Page<Customer> searchCustomers(
             Optional<String> nationalityId,
