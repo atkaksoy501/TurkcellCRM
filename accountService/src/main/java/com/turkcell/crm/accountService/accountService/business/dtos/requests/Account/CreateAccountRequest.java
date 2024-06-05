@@ -1,6 +1,6 @@
 package com.turkcell.crm.accountService.accountService.business.dtos.requests.Account;
 
-import com.turkcell.crm.accountService.accountService.core.enums.AccountType;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountType;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

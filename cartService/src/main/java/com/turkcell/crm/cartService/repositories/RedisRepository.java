@@ -38,4 +38,10 @@ public class RedisRepository {
     public void deleteItem(String id){
         this.hashOperations.delete(KEY,id);
     }
+
+    public double getTotalPriceByAccountId(int accountId) {
+
+        Cart cart = getCartByAccountId(String.valueOf(accountId));
+        return cart != null ? cart.getTotalPrice() : 0.0;
+    }
 }

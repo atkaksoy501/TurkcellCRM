@@ -17,5 +17,4 @@ public class CreateInvoiceRequest {
     private int orderId;
 
     private int accountId;
-
 }

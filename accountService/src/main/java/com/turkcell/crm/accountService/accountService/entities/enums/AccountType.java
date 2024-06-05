@@ -1,4 +1,4 @@
-package com.turkcell.crm.accountService.accountService.core.enums;
+package com.turkcell.crm.accountService.accountService.entities.enums;
 
 public enum AccountType {
     BILLING,

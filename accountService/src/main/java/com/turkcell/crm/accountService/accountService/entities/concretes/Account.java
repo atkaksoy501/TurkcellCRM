@@ -1,8 +1,8 @@
 package com.turkcell.crm.accountService.accountService.entities.concretes;
 
 import com.turkcell.crm.accountService.accountService.core.entities.BaseEntity;
-import com.turkcell.crm.accountService.accountService.core.enums.AccountStatus;
-import com.turkcell.crm.accountService.accountService.core.enums.AccountType;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountStatus;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,7 +35,7 @@ public class Account extends BaseEntity<Integer> {
     private int addressId;
 
     @ElementCollection
-    @CollectionTable(name = "product_ids")
+    @CollectionTable(name = "product_ids", joinColumns = @JoinColumn(name = "account_id"))
     @Column(name = "products")
     private List<Integer> productIds;
 

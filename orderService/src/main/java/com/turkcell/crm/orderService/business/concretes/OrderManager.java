@@ -7,6 +7,7 @@ import com.turkcell.crm.orderService.business.dtos.requests.UpdateOrderRequest;
 import com.turkcell.crm.orderService.business.dtos.responses.*;
 import com.turkcell.crm.orderService.business.rules.OrderBusinessRules;
 import com.turkcell.crm.orderService.clients.AddressServiceClient;
+import com.turkcell.crm.orderService.clients.CartServiceClient;
 import com.turkcell.crm.orderService.core.utilities.mapping.ModelMapperService;
 import com.turkcell.crm.orderService.dataAccess.OrderRepository;
 import com.turkcell.crm.orderService.entities.concretes.Order;
@@ -27,6 +28,7 @@ public class OrderManager implements OrderService {
     private final OrderBusinessRules orderBusinessRules;
     private final OrderProducer orderProducer;
     private final AddressServiceClient addressServiceClient;
+    private final CartServiceClient cartServiceClient;
 
     @Override
     @Transactional
@@ -40,13 +42,15 @@ public class OrderManager implements OrderService {
         createOrderProductsEvent.setAccountId(createOrderRequest.getAccountId());
         orderProducer.sendMessage(createOrderProductsEvent);
 
-        //total amount from cartservice
+        double totalPrice = cartServiceClient.getTotalPriceByAccountId(createOrderRequest.getAccountId());
+        order.setTotalAmount(totalPrice);
 
         orderRepository.save(order);
 
         GetAddressResponseById address = addressServiceClient.getById(createOrderRequest.getAddressId());
         CreatedOrderResponse createdOrderResponse = modelMapperService.forResponse().map(order, CreatedOrderResponse.class);
         createdOrderResponse.setAddress(address);
+
         return createdOrderResponse;
     }
 
@@ -75,6 +79,7 @@ public class OrderManager implements OrderService {
         Order order = orderRepository.findById(id).orElse(null);
         order.setDeletedDate(LocalDateTime.now());
         order.setActive(false);
+
         orderRepository.save(order);
     }
 
@@ -89,6 +94,7 @@ public class OrderManager implements OrderService {
 
         GetOrderByIdResponse getOrderByIdResponse = modelMapperService.forResponse().map(order, GetOrderByIdResponse.class);
         getOrderByIdResponse.setAddress(address);
+
         return getOrderByIdResponse;
     }
 
@@ -96,6 +102,7 @@ public class OrderManager implements OrderService {
     public List<GetAllOrdersResponse> getAll() {
 
         List<Order> orders = orderRepository.findAll().stream().filter(Order::isActive).toList();
+
         return orders.stream().map(order -> modelMapperService.forResponse().map(order, GetAllOrdersResponse.class)).toList();
     }
 

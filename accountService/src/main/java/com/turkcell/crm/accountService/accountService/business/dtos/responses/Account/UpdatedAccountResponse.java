@@ -1,13 +1,12 @@
 package com.turkcell.crm.accountService.accountService.business.dtos.responses.Account;
 
-import com.turkcell.crm.accountService.accountService.core.enums.AccountStatus;
-import com.turkcell.crm.accountService.accountService.core.enums.AccountType;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountStatus;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor

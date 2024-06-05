@@ -25,38 +25,51 @@ public class InvoiceManager implements InvoiceService {
 
     @Override
     public CreatedInvoiceResponse save(CreateInvoiceRequest createInvoiceRequest) {
+
         Invoice invoice = modelMapperService.forRequest().map(createInvoiceRequest, Invoice.class);
         invoice.setCreatedDate(LocalDateTime.now());
+
         invoiceRepository.save(invoice);
+
         return modelMapperService.forResponse().map(invoice, CreatedInvoiceResponse.class);
     }
 
     @Override
     public UpdatedInvoiceResponse update(UpdateInvoiceRequest updateInvoiceRequest) {
+
         Invoice invoice = invoiceRepository.findById(updateInvoiceRequest.getId()).orElse(null);
+
         modelMapperService.forUpdate().map(updateInvoiceRequest, invoice);
         invoice.setUpdatedDate(LocalDateTime.now());
+
         invoiceRepository.save(invoice);
+
         return modelMapperService.forResponse().map(invoice, UpdatedInvoiceResponse.class);
     }
 
     @Override
     public void delete(int id) {
+
         Invoice invoice = invoiceRepository.findById(id).orElse(null);
         invoice.setDeletedDate(LocalDateTime.now());
         invoice.setActive(false);
+
         invoiceRepository.save(invoice);
     }
 
     @Override
     public GetInvoiceByIdResponse getById(int id) {
+
         Invoice invoice = invoiceRepository.findById(id).orElse(null);
+
         return modelMapperService.forResponse().map(invoice, GetInvoiceByIdResponse.class);
     }
 
     @Override
     public List<GetAllInvoicesResponse> getAll() {
+
         List<Invoice> invoices = invoiceRepository.findAll().stream().filter(Invoice::isActive).toList();
+
         return invoices.stream().map(invoice -> modelMapperService.forResponse().map(invoice, GetAllInvoicesResponse.class)).toList();
     }
 }
