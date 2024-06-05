@@ -1208,3 +1208,7 @@ fsearchService/src/main/java/com/turkcell/crm/searchService/core/business/concre
 dsearchService/src/main/java/com/turkcell/crm/searchService/core/configuration/ApplicationConfig.java,3\6\36a44898a71e22e77750499d4f2620245d0eb58c
 –
 fsearchService/src/main/java/com/turkcell/crm/searchService/dataAccess/abstracts/ProductRepository.java,7\e\7e5be047931dc09ecf32b249530190cca7209491
+F
+searchService/mvnw.cmd,1\c\1c5ea7e4510e172dd77bc76bf5338030c48b855c
+H
+searchService/.gitignore,4\6\46a3c8f1f818e080b443c861bf47eff35c609078
