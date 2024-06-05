@@ -1196,3 +1196,5 @@ pcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/kaf
 pcatalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/kafka/producers/ProductProducer.java,8\4\84ed15ceabeb1b2b95e0c0b38e3fefcae6d9f0bb
 µ
 „catalogService/src/main/java/com/turkcell/crm/catalogService/catalogService/business/dtos/requests/catalog/CreateCatalogRequest.java,5\3\53f07df057db86fa333ac5e4954eeba0e0f416b2
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

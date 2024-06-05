@@ -163,13 +163,15 @@ services:
     volumes:
       - ./catalogService:/app
     depends_on:
+      - crmcatalogdbprod
       - crmdiscoveryserver
       - crmconfigserver
       - kafka
 
   crminvoicedbprod:
     container_name: crminvoicedbprod
-    image: postgres
+    image: postgres:latest
+    restart: always
     ports:
       - "5465:5432"
     environment:
@@ -184,6 +186,7 @@ services:
     volumes:
       - ./invoiceService:/app
     depends_on:
+      - crminvoicedbprod
       - crmdiscoveryserver
       - crmconfigserver
       - kafka

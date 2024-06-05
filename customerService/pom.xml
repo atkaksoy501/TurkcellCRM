@@ -119,32 +119,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<!-- wsimport işlemi için cxf-codegen-plugin eklentisi -->
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.3.3</version> <!-- Bu sürüm Maven Central'da mevcut -->
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-						<configuration>
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL</wsdl>
-									<extraargs>
-										<extraarg>-client</extraarg>
-									</extraargs>
-									<packageName>com.example.mernis.client</packageName>
-								</wsdlOption>
-							</wsdlOptions>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 </project>
