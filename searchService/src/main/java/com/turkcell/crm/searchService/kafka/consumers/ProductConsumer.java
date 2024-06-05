@@ -16,7 +16,7 @@ public class ProductConsumer {
 
     private ProductService productService;
 
-    @KafkaListener(topics = "product-created",groupId="product-create")
+    @KafkaListener(topics = "product-created", groupId="product-create")
     public void consume(CreateProductEvent createProductEvent){
         LOGGER.info("Product event consumed => {}", createProductEvent);
         Product product=new Product();

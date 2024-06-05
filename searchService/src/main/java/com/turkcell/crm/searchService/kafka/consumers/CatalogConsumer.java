@@ -16,7 +16,7 @@ public class CatalogConsumer {
 
     private final CatalogService catalogService;
 
-    @KafkaListener(topics = "catalog-created",groupId="catalog-create")
+    @KafkaListener(topics = "catalog-created", groupId="catalog-create")
     public void consume(CreateCatalogEvent createCatalogEvent){
         LOGGER.info("Catalog event consumed => {}", createCatalogEvent);
         Catalog catalog = new Catalog();

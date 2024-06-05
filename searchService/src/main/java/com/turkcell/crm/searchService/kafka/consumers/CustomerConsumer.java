@@ -17,7 +17,7 @@ public class CustomerConsumer {
 
     private CustomerService customerService;
 
-    @KafkaListener(topics = "individual-customer-created",groupId="individual-customer-create")
+    @KafkaListener(topics = "individual-customer-created", groupId="individual-customer-create")
     public void consume(CreateIndividualCustomerEvent customerCreatedEvent){
         LOGGER.info("Customer event consumed => {}", customerCreatedEvent);
         Customer customer = new Customer();
