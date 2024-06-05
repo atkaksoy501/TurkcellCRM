@@ -14,7 +14,9 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CustomerConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerConsumer.class);
+
     private CustomerService customerService;
+
     @KafkaListener(topics = "individual-customer-created",groupId="individual-customer-create")
     public void consume(CreateIndividualCustomerEvent customerCreatedEvent){
         LOGGER.info("Customer event consumed => {}", customerCreatedEvent);

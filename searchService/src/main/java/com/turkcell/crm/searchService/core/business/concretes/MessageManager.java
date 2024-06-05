@@ -1,7 +1,5 @@
 package com.turkcell.crm.searchService.core.business.concretes;
 
-
-
 import com.turkcell.crm.searchService.core.business.abstracts.MessageService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;

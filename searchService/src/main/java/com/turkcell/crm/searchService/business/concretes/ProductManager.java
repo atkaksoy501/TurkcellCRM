@@ -22,7 +22,6 @@ public class ProductManager implements ProductService {
     private final ProductRepository productRepository;
     private final MongoTemplate mongoTemplate;
 
-
     @Override
     public void add(Product product) {
         productRepository.save(product);
@@ -38,13 +37,17 @@ public class ProductManager implements ProductService {
             Pageable pageable
     ) {
         Query query = new Query();
+
         name.ifPresent(n -> query.addCriteria(Criteria.where("name").regex("^" + n, "i")));
         id.ifPresent(i -> query.addCriteria(Criteria.where("id").is(i)));
         price.ifPresent(p -> query.addCriteria(Criteria.where("price").is(p)));
         stockAmount.ifPresent(s -> query.addCriteria(Criteria.where("stockAmount").is(s)));
         description.ifPresent(d -> query.addCriteria(Criteria.where("description").regex("^" + d, "i")));
+
         long total = mongoTemplate.count(query, Product.class);
+
         List<Product> products = mongoTemplate.find(query.with(pageable), Product.class);
+
         return new PageImpl<>(products, pageable, total);
     }
 
