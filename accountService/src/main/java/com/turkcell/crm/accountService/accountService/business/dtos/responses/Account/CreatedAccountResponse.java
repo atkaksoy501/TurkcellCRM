@@ -1,7 +1,7 @@
 package com.turkcell.crm.accountService.accountService.business.dtos.responses.Account;
 
-import com.turkcell.crm.accountService.accountService.core.enums.AccountStatus;
-import com.turkcell.crm.accountService.accountService.core.enums.AccountType;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountStatus;
+import com.turkcell.crm.accountService.accountService.entities.enums.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,5 +23,8 @@ public class CreatedAccountResponse {
 
     private LocalDateTime createdDate;
 
+    private int customerId;
+
     private List<Integer> productIds;
+
 }

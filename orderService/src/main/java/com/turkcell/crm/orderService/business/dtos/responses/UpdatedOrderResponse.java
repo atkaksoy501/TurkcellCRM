@@ -15,7 +15,7 @@ public class UpdatedOrderResponse {
 
     private double totalAmount;
 
-    private int addressId;
+    private GetAddressResponseById address;
 
     private List<Integer> productIds;
 

@@ -16,10 +16,12 @@ import org.springframework.stereotype.Service;
 public class OrderProductsConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderProductsConsumer.class);
+
     private AccountService accountService;
 
-    @KafkaListener(topics = "order-products-created",groupId="order-products-create")
+    @KafkaListener(topics = "order-products-created", groupId="order-products-create")
     public void consume(CreateOrderProductsEvent createdOrderProductsEvent){
+
         UpdateAccountRequest updateAccountRequest = new UpdateAccountRequest();
         updateAccountRequest.setId(createdOrderProductsEvent.getAccountId());
         updateAccountRequest.setProductIds(createdOrderProductsEvent.getProductIds());

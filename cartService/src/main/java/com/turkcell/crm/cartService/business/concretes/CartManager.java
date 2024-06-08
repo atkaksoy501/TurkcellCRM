@@ -132,4 +132,10 @@ public class CartManager implements CartService {
     public Map<String,Cart> getAllItems(){
         return this.redisRepository.getAllItems();
     }
+
+    @Override
+    public double getTotalPriceByAccountId(int accountId) {
+
+        return this.redisRepository.getTotalPriceByAccountId(accountId);
+    }
 }

@@ -20,15 +20,17 @@ import java.util.List;
 @AllArgsConstructor
 @Service
 public class AccountManager implements AccountService {
-    private final ModelMapperService modelMapperService;
-    private final AccountRepository accountRepository;
-    private final AccountBusinessRules accountBusinessRules;
+
+    private ModelMapperService modelMapperService;
+    private AccountRepository accountRepository;
+    private AccountBusinessRules accountBusinessRules;
     @Override
     public GetAccountResponseById getAccountById(int id) {
 
         accountBusinessRules.accountMustExist(id);
 
         Account account = accountRepository.findById(id).orElse(null);
+
         return this.modelMapperService.forResponse().map(account, GetAccountResponseById.class);
     }
 
@@ -36,6 +38,7 @@ public class AccountManager implements AccountService {
     public List<GetAllAccountResponse> getAll() {
 
         List<Account> accounts = accountRepository.findAll().stream().filter(Account::isActive).toList();
+
         return accounts.stream().map(
                 account -> this.modelMapperService.forResponse().map(account, GetAllAccountResponse.class)
         ).toList();
@@ -46,7 +49,9 @@ public class AccountManager implements AccountService {
 
         Account account = this.modelMapperService.forRequest().map(createAccountRequest, Account.class);
         account.setCreatedDate(LocalDateTime.now());
+
         Account savedAccount = accountRepository.save(account);
+
         return this.modelMapperService.forResponse().map(savedAccount, CreatedAccountResponse.class);
     }
 
@@ -58,7 +63,9 @@ public class AccountManager implements AccountService {
         Account account = accountRepository.findById(updateAccountRequest.getId()).orElse(null);
         modelMapperService.forUpdate().map(updateAccountRequest, account);
         account.setUpdatedDate(LocalDateTime.now());
+
         Account savedAccount = accountRepository.save(account);
+
         return this.modelMapperService.forResponse().map(savedAccount, UpdatedAccountResponse.class);
     }
 
@@ -71,6 +78,7 @@ public class AccountManager implements AccountService {
         Account account = accountRepository.findById(id).orElse(null);
         account.setActive(false);
         account.setDeletedDate(LocalDateTime.now());
+
         accountRepository.save(account);
     }
 }

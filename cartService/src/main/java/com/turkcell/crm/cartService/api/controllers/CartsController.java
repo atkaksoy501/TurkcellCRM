@@ -83,5 +83,12 @@ public class CartsController {
         return cartService.getAllItems();
     }
 
+    @GetMapping("/getTotalPrice/{accountId}")
+    @ResponseStatus(HttpStatus.OK)
+    public double getTotalPriceByAccountId(@PathVariable int accountId) {
+
+        return cartService.getTotalPriceByAccountId(accountId);
+    }
+
 
 }

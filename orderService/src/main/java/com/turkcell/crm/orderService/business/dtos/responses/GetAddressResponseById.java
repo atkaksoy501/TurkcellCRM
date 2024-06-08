@@ -1,7 +1,5 @@
-package com.turkcell.crm.customerService.business.dtos.responses.Address;
+package com.turkcell.crm.orderService.business.dtos.responses;
 
-import com.turkcell.crm.customerService.entities.concretes.enums.AddressType;
-import com.turkcell.crm.customerService.entities.concretes.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,9 +19,4 @@ public class GetAddressResponseById {
 
     private String postalCode;
 
-    private AddressType addressType;
-
-    private String addressTitle;
-
-    private Customer customer;
 }

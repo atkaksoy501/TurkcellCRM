@@ -12,4 +12,6 @@ public class UpdateInvoiceRequest {
     private int id;
 
     private int orderId;
+
+    private int accountId;
 }

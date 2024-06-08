@@ -23,4 +23,5 @@ public interface CartService {
     List<GetAllCartsResponse> getAllCarts();
     GetCartResponse getCartByAccountId(String accountId);
     Map<String, Cart> getAllItems();
+    double getTotalPriceByAccountId(int accountId);
 }
